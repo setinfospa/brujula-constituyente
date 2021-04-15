@@ -1,3 +1,24 @@
+window.addEventListener('load', function (event) {
+	let form = $('#wizard');
+	console.log(form.validate());
+
+	let parent_fieldset = $('.multisteps-form__panel.js-active');
+
+	parent_fieldset.find('.required').each(function (idx, data) {
+		data.addEventListener('keyup', (e) => {
+			if (e.target.value.length > 1) {
+				$(this).removeClass('custom-select is-invalid');
+				$(this).addClass('custom-select is-valid');
+			} else {
+				$(this).removeClass('custom-select is-valid');
+				$(this).addClass('custom-select is-invalid');
+			}
+		});
+		var form = $('.required');
+		form.validate();
+	});
+});
+
 $(function () {
 	// Select Dropdown
 	$('html').on('click', function () {
@@ -213,15 +234,63 @@ $(function () {
 			// var inputs = document.querySelectorAll('input');
 			// console.log(inputs);
 
+			let form = $('#wizard');
+			form.validate();
+
 			let parent_fieldset = $('.multisteps-form__panel.js-active');
+			let next_step = true;
 			let inputs = parent_fieldset.find('.asd');
+			let name = parent_fieldset.find('.form-control');
 			let array = [];
+
+			parent_fieldset.find('.required').each(function () {
+				next_step = false;
+				var form = $('.required');
+				form.validate();
+				$(this).addClass('custom-select is-invalid');
+			});
+
+			if (form.validate().currentForm[0].classList[4] === 'valid') {
+				next_step = true;
+			}
 
 			inputs.each((idx, input) => {
 				array.push(input.checked);
 			});
 
 			let found = array.find((e) => e === true);
+
+			if (activePanelNum === 1) {
+				let nexts = true;
+				let parent_fieldset = $('.multisteps-form__panel.js-active');
+
+				parent_fieldset.find('.selects').each(function (idx, data) {
+					if (data.value === 'Seleccione su región' || data.value === 'Seleccione su comuna') {
+						nexts = false;
+						var form = $('.required');
+						form.validate();
+						$(this).addClass('custom-select is-invalid');
+					} else {
+						nexts = true;
+					}
+				});
+
+				if (nexts === true) {
+					parent_fieldset.find('.selects').each(function () {
+						$(this).removeClass('custom-select is-invalid');
+					});
+
+					$('html, body').animate(
+						{
+							scrollTop: 0,
+						},
+						600
+					);
+					activePanelNum++;
+					setActiveStep(activePanelNum);
+					setActivePanel(activePanelNum);
+				}
+			}
 
 			if (found === true) {
 				parent_fieldset.find('.alert-danger').each(function () {
@@ -239,6 +308,24 @@ $(function () {
 				setActiveStep(activePanelNum);
 				setActivePanel(activePanelNum);
 			} else {
+				if (activePanelNum === 0 && next_step === true) {
+					parent_fieldset.find('.alert-danger').each(function () {
+						$(this).removeClass('d-block');
+						$(this).addClass('d-none');
+					});
+
+					$('html, body').animate(
+						{
+							scrollTop: 0,
+						},
+						600
+					);
+					activePanelNum++;
+					setActiveStep(activePanelNum);
+					setActivePanel(activePanelNum);
+					next_step = false;
+				}
+
 				parent_fieldset.find('.alert-danger').each(function () {
 					$(this).removeClass('d-none');
 					$(this).addClass('d-block');

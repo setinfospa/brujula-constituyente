@@ -3,7 +3,7 @@
 
     <div class="wrapper">
         <div class="steps-area steps-area-fixed">
-            <div class="image-holder">
+            <div class="d-none d-sm-none d-md-none d-lg-none d-xl-block image-holder">
                 <img src="assets/img/side-img.jpg" alt="" />
             </div>
             <div class="steps clearfix d-none">
@@ -28,6 +28,8 @@
         </div>
         <form class="multisteps-form__form" action="#" id="wizard" method="POST">
             <div class="form-area position-relative">
+                {{> question_name}}
+                {{> question_comune}}
                 {{> questions}}
             </div>
         </form>

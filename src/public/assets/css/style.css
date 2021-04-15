@@ -84,6 +84,73 @@ Color Code
 	background-color: #3b5323;
 }
 
+@media screen and (max-width: 767px) {
+	.thumbs {
+		margin-left: 3px;
+		background-repeat: no-repeat;
+		border-radius: 50%;
+		-moz-border-radius: 50%;
+		-webkit-border-radius: 50%;
+		border: 0;
+		display: inline-block;
+		background-position: 50%;
+		cursor: pointer;
+		height: 37px;
+		width: 37px;
+		background-size: 22px;
+	}
+
+	.thumbs.t1 {
+		background-color: #fc1501;
+		background-image: url(../img/GenderTeststronglydisagree2.png);
+		margin-left: 40%;
+	}
+
+	.thumbs.t2 {
+		background-color: #fc1501;
+		background-image: url(../img/GenderTestdisagree2.png);
+		margin-left: 40%;
+	}
+
+	.thumbs.t3 {
+		background-color: #b0b0b0;
+		background-image: url(../img/GenderTestneutral2.png);
+		margin-left: 40%;
+	}
+
+	.thumbs.t4 {
+		background-color: #61b329;
+		background-image: url(../img/GenderTestagree2.png);
+		margin-left: 40%;
+	}
+
+	.thumbs.t5 {
+		background-color: #61b329;
+		background-image: url(../img/GenderTeststronglyagree2.png);
+		margin-left: 40%;
+	}
+
+	.thumbs.t1.active {
+		background-color: #8b0000;
+	}
+
+	.thumbs.t2.active {
+		background-color: #8b0000;
+	}
+
+	.thumbs.t3.active {
+		background-color: #666;
+	}
+
+	.thumbs.t4.active {
+		background-color: #3b5323;
+	}
+
+	.thumbs.t5.active {
+		background-color: #3b5323;
+	}
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -1473,8 +1540,9 @@ select.form-control option[value=''][disabled] {
 	}
 	.actions li span {
 		height: 60px;
-		width: 170px;
+		width: 120px;
 		line-height: 60px;
+		font-size: 19px;
 	}
 }
 @media screen and (max-width: 580px) {

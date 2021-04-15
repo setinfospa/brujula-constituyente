@@ -10,7 +10,7 @@ let json = getQuestions();
 router.post('/', (req, res) => {
 	res.send('hola');
 	const obj = getJSONFromString(req.body);
-	console.log(obj);
+	console.log(Object.values(obj));
 });
 
 router.post('/api/responses', (req, res) => {
