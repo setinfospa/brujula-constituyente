@@ -1,0 +1,140 @@
+{{#each json}}
+<div class="multisteps-form__panel {{#if this.First}}js-active{{/if}}" data-animation="slideHorz">
+    <div class="wizard-forms">
+        <div class="inner pb-100 clearfix">
+            <div class="form-content pera-content">
+                <div class="step-inner-content">
+                    <span class="step-no">{{this.Code}}</span>
+                    <div class="step-progress float-end">
+                        <span>{{this.Code}} de 38 preguntas respondidas</span>
+                        <div class="step-progress-bar">
+                            <div class="progress">
+                                <div class="progress-bar" style="width: {{this.ProgressBar}}%">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span style="    display: block;
+    font-size: 1.8em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;">
+                        {{this.Marcatemporal}}
+                    </span>
+                    <div class="alert alert-danger d-none d-inline" role="alert">
+                        Debe Seleccionar una opción!
+                    </div>
+                    <div class="step-box">
+                        <div class="row">
+                            <div class="col">
+                                <label id="{{this.Code}}1"
+                                    class="step-box-content bg-white text-center relative-position">
+
+                                    <span class="thumbs  t1">
+                                    </span>
+
+                                    <span class="">
+                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="1" required /></span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col">
+                                <label id="{{this.Code}}2"
+                                    class="step-box-content bg-white text-center relative-position">
+
+                                    <span class="thumbs t2">
+                                    </span>
+
+
+                                    <span class="">
+                                        <span><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="2"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col">
+                                <label id="{{this.Code}}3"
+                                    class="step-box-content bg-white text-center relative-position">
+
+                                    <span class="thumbs t3">
+                                    </span>
+
+                                    <span class="">
+                                        <span><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="3"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col">
+                                <label id="{{this.Code}}4"
+                                    class="step-box-content bg-white text-center relative-position">
+
+                                    <span class="thumbs t4">
+                                    </span>
+
+                                    <span class="">
+                                        <span><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="4"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col">
+                                <label id="{{this.Code}}5"
+                                    class="step-box-content bg-white text-center relative-position">
+
+                                    <span class="thumbs t5">
+                                    </span>
+
+                                    <span class="">
+                                        <span><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="5"></span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.inner -->
+        {{#if this.Last}}
+        <div class="actions">
+            <ul>
+                <li>
+                    <span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> Atras
+                    </span>
+                </li>
+                <li>
+                    <button type="submit" title="submit">
+                        Enviar <i class="fa fa-arrow-right"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        {{else}}
+        <div class="actions">
+            <ul>
+                {{#if this.First}}
+                <li>
+
+                </li>
+                {{else}}
+                <li>
+                    <span class="{{#if this.First}}disable{{/if}}js-btn-prev" title="BACK"><i
+                            class="fa fa-arrow-left"></i>
+                        Atras
+                    </span>
+                </li>
+                {{/if}}
+                <li>
+                    <span class="js-btn-next" title="NEXT">Siguiente <i class="fa fa-arrow-right"></i></span>
+                </li>
+            </ul>
+        </div>
+        {{/if}}
+    </div>
+</div>
+{{/each}}

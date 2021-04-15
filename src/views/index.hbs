@@ -1,0 +1,44 @@
+<body>
+    <div class="clearfix"></div>
+
+    <div class="wrapper">
+        <div class="steps-area steps-area-fixed">
+            <div class="image-holder">
+                <img src="assets/img/side-img.jpg" alt="" />
+            </div>
+            <div class="steps clearfix d-none">
+                <ul class="tablist multisteps-form__progress">
+                    <li class="multisteps-form__progress-btn js-active current">
+                        <span>1</span>
+                    </li>
+                    <li class="multisteps-form__progress-btn">
+                        <span>2</span>
+                    </li>
+                    <li class="multisteps-form__progress-btn">
+                        <span>3</span>
+                    </li>
+                    <li class="multisteps-form__progress-btn">
+                        <span>4</span>
+                    </li>
+                    <li class="multisteps-form__progress-btn last">
+                        <span>5</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <form class="multisteps-form__form" action="#" id="wizard" method="POST">
+            <div class="form-area position-relative">
+                {{> questions}}
+            </div>
+        </form>
+    </div>
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/conditionize.flexible.jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/switch.js"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
