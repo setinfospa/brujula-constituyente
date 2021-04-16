@@ -7,7 +7,11 @@ const functions = require('../helpers/functions');
 let json = getQuestions();
 
 router.get('/', (req, res) => {
-	res.render('index', {
+	res.render('index');
+});
+
+router.get('/questionnaire', (req, res) => {
+	res.render('questionnaire', {
 		json,
 	});
 });
