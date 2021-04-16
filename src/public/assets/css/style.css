@@ -14,6 +14,28 @@ Color Code
 /*global area*/
 /*----------------------------------------------------*/
 
+.title-h2 {
+	display: block;
+	font-size: 1.8em;
+	margin-block-start: 1.7em;
+	margin-block-end: 0.83em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+	.title-h2 {
+		display: block;
+		font-size: 20px;
+		margin-block-start: 0.83em;
+		margin-block-end: 0.83em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		font-weight: bold;
+	}
+}
+
 .col input {
 	position: absolute;
 	left: -9999px;
@@ -524,14 +546,14 @@ select.form-control option[value=''][disabled] {
 }
 .actions li span,
 .actions li button {
-	height: 75px;
-	width: 210px;
+	height: 60px;
+	width: 120px;
 	color: #fff;
 	display: block;
-	font-size: 24px;
+	font-size: 19px;
 	font-weight: 500;
 	border-radius: 5px;
-	line-height: 75px;
+	line-height: 60px;
 	text-align: center;
 	background-color: #6b59d3;
 	border: 0;
@@ -1448,7 +1470,7 @@ select.form-control option[value=''][disabled] {
 @media screen and (max-width: 991px) {
 	.pb-100,
 	.pb-200 {
-		padding-bottom: 30px;
+		padding-bottom: 10px;
 	}
 
 	.wizard {
@@ -1480,7 +1502,7 @@ select.form-control option[value=''][disabled] {
 	}
 
 	.form-content h2 {
-		font-size: 26px;
+		font-size: 20px;
 	}
 
 	.form-content p {
@@ -1518,7 +1540,7 @@ select.form-control option[value=''][disabled] {
 	}
 
 	.step-inner-content {
-		padding-bottom: 50px;
+		padding-bottom: 10px;
 	}
 
 	.budget-area .opti-list li {

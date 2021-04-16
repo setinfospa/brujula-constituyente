@@ -1,5 +1,5 @@
-﻿ProgressBar;Code;Tema;Code2;Acuerdo;Marca temporal;P Lista;PCandi;Fuente;Comentario;First;Last
-2;1;Educacion;E1;Acuerdo;La educación pública de calidad debiera ser un derecho para todos. pagada por impuestos. y no que cada uno tenga acceso según sus capacidades económicas.;1;1;;;true
+﻿ProgressBar;Code;Tema;Code2;Acuerdo;Marca temporal;P Lista;PCandi;Fuente;Comentario;First;Last;AprueboRechazo;MixtaConstitucional;Mujer
+2;1;Educacion;E1;Acuerdo;La educación pública de calidad debiera ser un derecho para todos. pagada por impuestos. y no que cada uno tenga acceso según sus capacidades económicas.;1;1;;;true;;;;
 5;2;Educacion;E2;Desacuerdo;Es fundamental que cada familia pueda elegir donde educa a sus hijos. de acuerdo a sus intereses y posibilidades económicas.;1;1;;
 7;3;Educacion;E3;Acuerdo;Todos debieran tener acceso a la educación superior según sus habilidades. sin importar sus recursos económicos.;1;1;;Quizás es redundante con la E110.526315789473685
 8;4;Indigena;I1;Desacuerdo;Se requiere mano dura para solucionar el conflicto mapuche.;1;1;;
@@ -30,10 +30,10 @@
 78;29;Valores;VA2;Desacuerdo;El aborto debiese prohibirse bajo cualquier causal.;1;1;UDP;
 81;30;Valores;VA3;Acuerdo;Las parejas homosexuales deberían tener derecho a contraer matrimonio.;0.5;0.5;UDP;
 84;31;Valores;VA4;Acuerdo;Las parejas homosexuales deberían tener derecho a adoptar hijos.;0.5;0.5;UDP;
-86;32;Opcion;OP1;x;En la pasada elección su opción era: Apruebo o Rechazo;1;1;;
-89;33;Opcion;OP2;x;En la pasada elección su opción era: Convención Mixta o Constitucional;1;0;;
+86;32;Opcion;OP1;x;En la pasada elección su opción era: Apruebo o Rechazo;1;1;;;;true;;;
+89;33;Opcion;OP2;x;En la pasada elección su opción era: Convención Mixta o Constitucional;1;0;;;;;;true;
 92;34;Opcion;OP3;x;Estuve de acuerdo con la firma del Acuerdo Por la Paz Social y la Nueva Constitución que dio inicio formal al proceso constituyente. (15 nov 2019).;0.2;0.2;;
 94;35;Filtro;Fi1;x;Prefiero los candidatos que no reciben  grandes aportes de empresas o privados.;0;1;;
 97;36;Filtro;Fi2;x;Prefiero que me represente un constituyente menor de 45 años;0;0;;
-99;37;Filtro;Fi3;x;Prefiere que me represente una constituyente mujer;0;0.2;;
+99;37;Filtro;Fi3;x;Prefiere que me represente una constituyente mujer;0;0.2;;;;;;;true
 100;38;Filtro;Fi4;x;Prefiero que me represente un constituyente que viva en el distrito al cual se postula;0;0;;;;true

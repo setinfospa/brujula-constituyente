@@ -260,7 +260,7 @@ $(function () {
 
 			let found = array.find((e) => e === true);
 
-			if (activePanelNum === 1) {
+			if (activePanelNum === 2) {
 				let nexts = true;
 				let parent_fieldset = $('.multisteps-form__panel.js-active');
 
@@ -308,7 +308,7 @@ $(function () {
 				setActiveStep(activePanelNum);
 				setActivePanel(activePanelNum);
 			} else {
-				if (activePanelNum === 0 && next_step === true) {
+				if (activePanelNum === 0 || (activePanelNum === 1 && next_step === true)) {
 					parent_fieldset.find('.alert-danger').each(function () {
 						$(this).removeClass('d-block');
 						$(this).addClass('d-none');

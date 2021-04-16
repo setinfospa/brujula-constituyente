@@ -4,7 +4,7 @@
         <div class="inner pb-100 clearfix">
             <div class="form-content pera-content">
                 <div class="step-inner-content">
-                    <span class="d-none d-sm-none d-md-block step-no">{{this.Code}}</span>
+                    <span class="step-no bottom-line">{{this.Tema}}</span>
                     <div class="step-progress float-end">
                         <span>{{this.Code}} de 38 preguntas respondidas</span>
                         <div class="step-progress-bar">
@@ -14,13 +14,7 @@
                             </div>
                         </div>
                     </div>
-                    <span style="    display: block;
-    font-size: 1.8em;
-    margin-block-start: 0.83em;
-    margin-block-end: 0.83em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;">
+                    <span class="title-h2">
                         {{this.Marcatemporal}}
                     </span>
                     <div class="alert alert-danger d-none d-inline" role="alert">
@@ -28,6 +22,98 @@
                     </div>
                     <div class="step-box">
                         <div class="row">
+                            {{#if this.AprueboRechazo}}
+                            <div class="col">
+                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
+
+                                    <span class="thumbs  t2">
+                                    </span>
+
+                                    <span class="">
+                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="1" required />
+                                            <label for="">Rechazo</label></span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col">
+                                <label id="{{this.Code}}2" class="step-box-content text-center relative-position">
+
+                                    <span class="thumbs t4">
+                                    </span>
+
+
+                                    <span class="">
+                                        <span><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="5"><label for="">Apruebo</label></span>
+                                    </span>
+                                </label>
+                            </div>
+                            {{else if this.MixtaConstitucional}}
+                            <div class="col-6">
+                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
+
+                                    <span class="thumbs  t2">
+                                    </span>
+
+                                    <span class="">
+                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="1" required />
+                                            <label for="">Mixta</label></span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-6">
+                                <label id="{{this.Code}}2" class="step-box-content text-center relative-position">
+
+                                    <span class="thumbs t4">
+                                    </span>
+
+
+                                    <span class="">
+                                        <span><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="5"><label for="">Constitucional</label></span>
+                                    </span>
+                                </label>
+                            </div>
+                            {{else if this.Mujer}}
+                            <div class="col">
+                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
+
+                                    <span class="thumbs  t2">
+                                    </span>
+
+                                    <span class="">
+                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="1" required />
+                                            <label for="">No</label></span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col">
+                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
+
+                                    <span class="thumbs  t3">
+                                    </span>
+
+                                    <span class="">
+                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="3" required />
+                                            <label for="">Indiferente</label></span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col">
+                                <label id="{{this.Code}}2" class="step-box-content text-center relative-position">
+                                    <span class="thumbs t4">
+                                    </span>
+                                    <span class="">
+                                        <span><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="5"><label for="">Si</label></span>
+                                    </span>
+                                </label>
+                            </div>
+                            {{else}}
                             <div class="col">
                                 <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
 
@@ -89,6 +175,8 @@
                                     </span>
                                 </label>
                             </div>
+                            {{/if}}
+
                         </div>
                     </div>
                 </div>
