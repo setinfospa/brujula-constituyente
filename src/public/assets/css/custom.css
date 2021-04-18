@@ -1,0 +1,203 @@
+a {
+	color: blue;
+}
+
+a:link {
+	color: blue;
+}
+
+a:visited {
+	color: blue;
+}
+
+a:focus {
+	color: blue;
+}
+
+a:hover {
+	color: blue;
+	text-decoration: underline;
+}
+
+a:active {
+	color: blue;
+}
+
+hr.compass {
+	border-top: 5px solid green;
+	border-bottom: 5px solid red;
+}
+
+@media screen and (max-width: 767px) {
+	hr.compass {
+		border-top: 10px solid green;
+		border-bottom: 10px solid red;
+	}
+}
+
+.title-h2 {
+	display: block;
+	font-size: 1.8em;
+	margin-block-start: 1.7em;
+	margin-block-end: 0.83em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 767px) {
+	.title-h2 {
+		display: block;
+		font-size: 20px;
+		margin-block-start: 0.83em;
+		margin-block-end: 0.83em;
+		margin-inline-start: 0px;
+		margin-inline-end: 0px;
+		font-weight: bold;
+	}
+}
+
+.col input {
+	position: absolute;
+	left: -9999px;
+}
+
+.thumbs {
+	margin-left: 3px;
+	background-repeat: no-repeat;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border: 0;
+	display: inline-block;
+	background-position: 50%;
+	cursor: pointer;
+	height: 47px;
+	width: 47px;
+	background-size: 22px;
+}
+
+.thumbs.t1 {
+	background-color: #fc1501;
+	background-image: url(../img/GenderTeststronglydisagree2.png);
+	margin-left: 40%;
+}
+
+.thumbs.t2 {
+	background-color: #fc1501;
+	background-image: url(../img/GenderTestdisagree2.png);
+	margin-left: 40%;
+}
+
+.thumbs.t3 {
+	background-color: #b0b0b0;
+	background-image: url(../img/GenderTestneutral2.png);
+	margin-left: 40%;
+}
+
+.thumbs.t4 {
+	background-color: #61b329;
+	background-image: url(../img/GenderTestagree2.png);
+	margin-left: 40%;
+}
+
+.thumbs.t4-xl {
+	background-color: #61b329;
+	background-image: url(../img/GenderTestagree2.png);
+	margin-left: 40%;
+	width: 100px;
+	height: 100px;
+}
+
+.thumbs.t5 {
+	background-color: #61b329;
+	background-image: url(../img/GenderTeststronglyagree2.png);
+	margin-left: 40%;
+}
+
+.thumbs.t1.active {
+	background-color: #8b0000;
+}
+
+.thumbs.t2.active {
+	background-color: #8b0000;
+}
+
+.thumbs.t3.active {
+	background-color: #666;
+}
+
+.thumbs.t4.active {
+	background-color: #3b5323;
+}
+
+.thumbs.t5.active {
+	background-color: #3b5323;
+}
+
+@media screen and (max-width: 767px) {
+	.thumbs {
+		margin-left: 3px;
+		background-repeat: no-repeat;
+		border-radius: 50%;
+		-moz-border-radius: 50%;
+		-webkit-border-radius: 50%;
+		border: 0;
+		display: inline-block;
+		background-position: 50%;
+		cursor: pointer;
+		height: 37px;
+		width: 37px;
+		background-size: 22px;
+	}
+
+	.thumbs.t1 {
+		background-color: #fc1501;
+		background-image: url(../img/GenderTeststronglydisagree2.png);
+		margin-left: 40%;
+	}
+
+	.thumbs.t2 {
+		background-color: #fc1501;
+		background-image: url(../img/GenderTestdisagree2.png);
+		margin-left: 40%;
+	}
+
+	.thumbs.t3 {
+		background-color: #b0b0b0;
+		background-image: url(../img/GenderTestneutral2.png);
+		margin-left: 40%;
+	}
+
+	.thumbs.t4 {
+		background-color: #61b329;
+		background-image: url(../img/GenderTestagree2.png);
+		margin-left: 40%;
+	}
+
+	.thumbs.t5 {
+		background-color: #61b329;
+		background-image: url(../img/GenderTeststronglyagree2.png);
+		margin-left: 40%;
+	}
+
+	.thumbs.t1.active {
+		background-color: #8b0000;
+	}
+
+	.thumbs.t2.active {
+		background-color: #8b0000;
+	}
+
+	.thumbs.t3.active {
+		background-color: #666;
+	}
+
+	.thumbs.t4.active {
+		background-color: #3b5323;
+	}
+
+	.thumbs.t5.active {
+		background-color: #3b5323;
+	}
+}

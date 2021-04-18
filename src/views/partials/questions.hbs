@@ -31,7 +31,7 @@
 
                                     <span class="">
                                         <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="1" required />
+                                                value="2" required />
                                             <label for="">Rechazo</label></span>
                                     </span>
                                 </label>
@@ -45,7 +45,7 @@
 
                                     <span class="">
                                         <span><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="5"><label for="">Apruebo</label></span>
+                                                value="4"><label for="">Apruebo</label></span>
                                     </span>
                                 </label>
                             </div>
@@ -58,13 +58,13 @@
 
                                     <span class="">
                                         <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="1" required />
+                                                value="2" required />
                                             <label for="">Mixta</label></span>
                                     </span>
                                 </label>
                             </div>
                             <div class="col-6">
-                                <label id="{{this.Code}}2" class="step-box-content text-center relative-position">
+                                <label id="{{this.Code}}4" class="step-box-content text-center relative-position">
 
                                     <span class="thumbs t4">
                                     </span>
@@ -85,7 +85,7 @@
 
                                     <span class="">
                                         <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="1" required />
+                                                value="2" required />
                                             <label for="">No</label></span>
                                     </span>
                                 </label>
@@ -109,7 +109,128 @@
                                     </span>
                                     <span class="">
                                         <span><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="5"><label for="">Si</label></span>
+                                                value="4"><label for="">Si</label></span>
+                                    </span>
+                                </label>
+                            </div>
+                            {{else if this.Acuerdo}}
+                            <div class="col">
+                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
+
+                                    <span class="thumbs  t2">
+                                    </span>
+
+                                    <span class="">
+                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="2" required />
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col">
+                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
+
+                                    <span class="thumbs  t4">
+                                    </span>
+
+                                    <span class="">
+                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="4" required />
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            {{else if this.Aportes}}
+                            <div class="col">
+                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
+
+                                    <span class="thumbs  t3">
+                                    </span>
+
+                                    <span class="">
+                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="3" required />
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col">
+                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
+
+                                    <span class="thumbs  t4">
+                                    </span>
+
+                                    <span class="">
+                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="4" required />
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            {{else if this.Anos}}
+                            <div class="col">
+                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
+
+                                    <span class="thumbs  t2">
+                                    </span>
+
+                                    <span class="">
+                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="2" required /><label for="">Mayor a 45</label>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col">
+                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
+
+                                    <span class="thumbs  t3">
+                                    </span>
+
+                                    <span class="">
+                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="3" required /><label for="">Indiferente</label>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col">
+                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
+
+                                    <span class="thumbs  t4">
+                                    </span>
+
+                                    <span class="">
+                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="4" required /><label for="">Menor a 45</label>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            {{else if this.Viva}}
+                            <div class="col">
+                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
+
+                                    <span class="thumbs  t3">
+                                    </span>
+
+                                    <span class="">
+                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="3" required />
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col">
+                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
+
+                                    <span class="thumbs  t4">
+                                    </span>
+
+                                    <span class="">
+                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
+                                                value="4" required />
+                                        </span>
                                     </span>
                                 </label>
                             </div>

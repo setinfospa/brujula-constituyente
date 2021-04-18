@@ -5,5 +5,5 @@ const btnStart = document.getElementById('btnStart');
 
 btnStart.addEventListener('click', () => {
 	console.log('asd');
-	window.location.href = 'http://brujulaconstituyente.cl/questionnaire';
+	window.location.href = 'http://localhost:3000/questionnaire';
 });
