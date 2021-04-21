@@ -1,13 +1,13 @@
 const { response } = require('express');
 const path = require('path');
 const fs = require('fs');
-let name;
 
 var Arr_Comunas = new Array();
 var Arr_Candidatos = new Array();
 var Arr_Preguntas = new Array();
 var Arr_Respuestas;
-var Arr_Resultado = new Array();
+var Arr_Resultado;
+let name;
 
 var cColR; //contador columna respuesta
 var Distr; //distrito del encuestado
@@ -41,7 +41,11 @@ function ProcesaRespuestas(Respuestas) {
 		console.log(Respuestas.length);
 		if (Respuestas.length > 0) {
 			name = Respuestas[0];
+			Arr_Resultado = new Array();
+			Arr_Respuestas = new Array(Arr_Preguntas.length - 1);
 			CP_Array(Respuestas, Arr_Respuestas);
+			Arr_Respuestas[Arr_Respuestas.length - 2] = 1;
+			Arr_Respuestas[Arr_Respuestas.length - 1] = 5;
 			RecomiendaCandidato().then((Respuesta) => resolve(Respuesta));
 		} else {
 			reject(error);
@@ -204,6 +208,7 @@ function RecorreCandidatos() {
 			} // solo los candidatos del distrito
 			DisL = CalculaDistanciaLista(cFilC); //calcula distancia con lista
 			DisC = CalculaDistanciaCandidato(cFilC);
+
 			if (DisL < 100) {
 				Arr_Resultado.push([
 					Arr_Candidatos[cFilC][4],
@@ -232,10 +237,10 @@ function RecomiendaCandidato() {
 	var FCerca = new Array(5); //Fila de los mas cercanos
 	var DCerca = new Array(5); //Distancia de los mas cercanos
 	var MaxFil; //fila maxima
-	var Arr_Salida = new Array();
 	var objeSalida = new Object();
 	var Arr_Res_Peor = new Array();
 	return new Promise(function (resolve, reject) {
+		Arr_Resultado = [];
 		MaxPreg = 45;
 		console.log('Buscando Distrito');
 		BuscaDistrito().then((res) => {
@@ -256,19 +261,15 @@ function RecomiendaCandidato() {
 						return a[9] - b[9];
 					});
 					//Ordena La escritura del archivo de Salida
-					// Agregar nombre de encuestado
-					objeSalida.name = name;
 					//Datos de comunas *****************************************************
 					Arr_Res_Peor.push(Arr_Resultado[Arr_Resultado.length - 1]); //Ultimo elemento guardado como el peor
 					Arr_Resultado.pop(); //Elimina ultimo elemento
+					objeSalida.name = name;
 					objeSalida.informacion = { N_Candidatos: NCand, Cupos: NCons, Poblacion_del_distrito: Pobl, Distrito: Distr };
-					Arr_Salida.push({
-						informacion: { N_Candidatos: NCand, Cupos: NCons, Poblacion_del_distrito: Pobl, Distrito: Distr },
-					});
 					if (Arr_Resultado[0][8] + Arr_Resultado[0][9] > 18) {
-						Arr_Salida.push({ Coherencia: 'PIENSA TUS RESPUESTAS, PARECEN INCOHERENTES' });
+						objeSalida.coherencia = 'PIENSA TUS RESPUESTAS, PARECEN INCOHERENTES';
 					} else {
-						Arr_Salida.push({ Coherencia: '' });
+						objeSalida.coherencia = null;
 					}
 					//resultados Mejores Candidatos**********************************************************
 					objeSalida.mejoresCandidatos = [
@@ -306,44 +307,8 @@ function RecomiendaCandidato() {
 							Porcentaje_Cercania: PorcentajeCercania(Arr_Resultado[2][8], Arr_Resultado[2][9]),
 						},
 					];
-					Arr_Salida.push({
-						mejoresCandidatos: [
-							{
-								Nombre1: Arr_Resultado[0][0],
-								Nombre2: Arr_Resultado[0][1],
-								Apellido1: Arr_Resultado[0][2],
-								Apellido2: Arr_Resultado[0][3],
-								Lista: Arr_Resultado[0][4],
-								Partido: Arr_Resultado[0][5],
-								Web: Arr_Resultado[0][6],
-								Codigo_candidato: Arr_Resultado[0][7],
-								Porcentaje_Cercania: PorcentajeCercania(Arr_Resultado[0][8], Arr_Resultado[0][9]),
-							},
-							{
-								Nombre1: Arr_Resultado[1][0],
-								Nombre2: Arr_Resultado[1][1],
-								Apellido1: Arr_Resultado[1][2],
-								Apellido2: Arr_Resultado[1][3],
-								Lista: Arr_Resultado[1][4],
-								Partido: Arr_Resultado[1][5],
-								Web: Arr_Resultado[1][6],
-								Codigo_candidato: Arr_Resultado[1][7],
-								Porcentaje_Cercania: PorcentajeCercania(Arr_Resultado[1][8], Arr_Resultado[1][9]),
-							},
-							{
-								Nombre1: Arr_Resultado[2][0],
-								Nombre2: Arr_Resultado[2][1],
-								Apellido1: Arr_Resultado[2][2],
-								Apellido2: Arr_Resultado[2][3],
-								Lista: Arr_Resultado[2][4],
-								Partido: Arr_Resultado[2][5],
-								Web: Arr_Resultado[2][6],
-								Codigo_candidato: Arr_Resultado[2][7],
-								Porcentaje_Cercania: PorcentajeCercania(Arr_Resultado[2][8], Arr_Resultado[2][9]),
-							},
-						],
-					});
 					//Peor Candidato**********************************************************************************
+
 					objeSalida.peorCandidato = {
 						Nombre1: Arr_Res_Peor[0][0],
 						Nombre2: Arr_Res_Peor[0][1],
@@ -355,20 +320,8 @@ function RecomiendaCandidato() {
 						Codigo_candidato: Arr_Res_Peor[0][7],
 						Porcentaje_Cercania: PorcentajeCercania(Arr_Res_Peor[0][8], Arr_Res_Peor[0][9]),
 					};
-					Arr_Salida.push({
-						peorCandidato: {
-							Nombre1: Arr_Res_Peor[0][0],
-							Nombre2: Arr_Res_Peor[0][1],
-							Apellido1: Arr_Res_Peor[0][2],
-							Apellido2: Arr_Res_Peor[0][3],
-							Lista: Arr_Res_Peor[0][4],
-							Partido: Arr_Res_Peor[0][5],
-							Web: Arr_Res_Peor[0][6],
-							Codigo_candidato: Arr_Res_Peor[0][7],
-							Porcentaje_Cercania: PorcentajeCercania(Arr_Res_Peor[0][8], Arr_Res_Peor[0][9]),
-						},
-					});
 					//guarda Peor****************************************************************************
+					//console.log(Arr_Salida)
 					resolve(objeSalida);
 				}
 			} else {
@@ -385,6 +338,6 @@ function GetResultado() {
 }
 exports.GetResultado = GetResultado;
 function PorcentajeCercania(DistL, DistC) {
-	return (-2.9412 * (DistL + DistC) + 117).toFixed(1) + '%';
+	return (-2.56 * (DistL + DistC) + 112).toFixed(1) + '%';
 }
 exports.PorcentajeCercania = PorcentajeCercania;

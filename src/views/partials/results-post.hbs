@@ -39,6 +39,11 @@
                 </div>
             </div>
             <br>
+            {{#if resultado.coherencia}}
+            <div class="alert alert-danger" role="alert">
+                {{resultado.coherencia}}
+            </div>
+            {{/if}}
             <h3 class="text-uppercase">Los más cercanos</h3>
             <br>
             {{#each resultado.mejoresCandidatos}}

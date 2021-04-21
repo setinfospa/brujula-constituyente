@@ -8,11 +8,13 @@ const functions = require('../helpers/functions');
 let json = getQuestions();
 
 router.post('/process', async (req, res) => {
-	console.log(req.body);
 	const obj = getJSONFromString(req.body); //Parametro recibido en la solicitud
 	const arr = Object.values(obj);
+	for (let index = 0; index < 6; index++) {
+		let string = '';
+		arr.push(string);
+	}
 	const resultado = await functions.ProcesaRespuestas(arr);
-	console.log(resultado);
 	res.render('results', {
 		resultado,
 	});
