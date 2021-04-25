@@ -5,8 +5,9 @@
                 <div class="col-12">
                     <h4><a href="https://brujulaconstituyente.cl">brujulaconstituyente.cl</a> </h4>
                     <br>
-                    <h3><span class="text-danger">{{resultado.name}}</span> acabas de poner a prueba a <span
-                            class="text-danger">{{resultado.informacion.N_Candidatos}}</span> candidatos del
+                    <h3><span class="text-danger">{{#if resultado.name}}{{resultado.name}}{{/if}}</span> Acabas de poner
+                        a prueba a <span class="text-danger">{{resultado.informacion.N_Candidatos}}</span> candidatos
+                        del
                         distrito <span class="text-danger">{{resultado.informacion.Distrito}}</span>
                     </h3>
                     <br>
