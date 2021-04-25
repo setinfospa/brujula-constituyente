@@ -11,7 +11,7 @@
 28;10;Medio Ambiente;MA3;Acuerdo;Se debe privilegiar el transporte público (autobuses, tren, metro, etc.) antes que al transporte privado (autos y camiones).;1;1;;
 31;11;Modelo;MO1;Acuerdo;Una buena reforma tributaria debe aumentar los impuestos a las grandes fortunas.;1;1;votacion Dip;
 34;12;Modelo;MO2;Desacuerdo;Lo principal de una reforma tributaria es que sea atractiva para los inversionistas.;1;1;;
-36;13;Modelo;MO3;Desacuerdo;Cuanto más libre es el mercado. más libres son las personas.;1;1;;
+36;13;Modelo;MO3;Desacuerdo;Cuanto más libre es el mercado, más libres son las personas.;1;1;;
 39;14;Pensiones;P1;Desacuerdo;El sistema de previsión actual de AFP ha funcionado de forma aceptable.;1;1;;
 42;15;Pensiones;P2;Acuerdo;El sistema de pensiones de las fuerzas armadas, ejército, carabineros, etc. debe ser igual al de todos los chilenos.;1;1;;
 44;16;Pensiones;P3;Acuerdo;El sistema de pensiones debe ser estatal.;1;1;UDP;
@@ -24,7 +24,7 @@
 63;23;Salud;SA1;Desacuerdo;Las personas con mayor capacidad de pago deberían recibir una mejor atención médica.;1;1;;
 65;24;Salud;SA2;Acuerdo;Lo mejor para Chile es un único sistema de salud para todos.;1;1;;
 68;25;Salud;SA3;Desacuerdo;El sistema de salud puede mejorarse, pero no hace falta cambiarlo sustancialmente.;1;1;votacion Dip;
-71;26;Seguridad;SE1;Acuerdo;Las fuerzas armadas y de seguridad (carabineros, PDI, etc.) coartan mi libertad más que la delincuencia.;1;1;;
+71;26;Seguridad;SE1;Acuerdo;Las fuerzas armadas y de seguridad (carabineros, PDI, etc.) restringen mi libertad más que la delincuencia.;1;1;;
 73;27;Seguridad;SE2;Acuerdo;Los delitos se cometen mayormente por personas con mayor educación.;1;1;;
 76;28;Valores;VA1;Acuerdo;Un enfermo terminal tiene derecho a solicitar su muerte asistida (eutanasia).;1;1;UDP;
 78;29;Valores;VA2;Desacuerdo;El aborto debe prohibirse bajo cualquier causal.;1;1;UDP;
