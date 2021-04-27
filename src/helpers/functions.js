@@ -1,6 +1,7 @@
 const { response } = require('express');
 const path = require('path');
 const fs = require('fs');
+const { debug } = require('console');
 
 var Arr_Comunas = new Array();
 var Arr_Candidatos = new Array();
@@ -81,21 +82,43 @@ function leeArchivo(archivo) {
 exports.leeArchivo = leeArchivo;
 //-----------------------------------------------------------------------------------------------------------------------------------------
 function EscribeArchivo(archivo, contenido) {
-	var stream = fs.createWriteStream(archivo);
+	var stream = fs.createWriteStream(archivo,{'flags': 'a','encoding': null,'mode': 0666});
 	stream.once('open', function (fd) {
 		contenido.forEach(function (linea) {
-			var Auxlinea = linea[0];
-			for (var i = 1; i < linea.length; i++) {
-				//stream.write(contenido)}
-				Auxlinea = Auxlinea + ',' + linea[i];
-			}
-			//console.log(Auxlinea);
-			stream.write(Auxlinea + '\r\n');
+			var Auxlinea = linea;
+			stream.write(Auxlinea + ',');
 		});
+		stream.write('\r\n');
 		stream.end();
 	});
+	
 }
 exports.EscribeArchivo = EscribeArchivo;
+
+function CodeArchivo(archivo) {
+	return new Promise(function (resolve, reject) {
+		if (fs.existsSync(archivo)==false) {resolve(false);}
+		fs.readFile(archivo, 'utf8', (error, datos) => {
+			if (error) {
+				reject(error);
+			} else {
+				var stream = fs.createWriteStream(archivo+".bin");
+				Arr_Lineas = datos.split('\r\n');
+				stream.once('open', function (fd) {
+					Arr_Lineas.forEach(function (linea){
+						//console.log("Linea Recibida "+linea)
+						var EncLinea=EncDecData(linea);
+						//console.log("Linea Codificada "+EncLinea)
+						stream.write(EncLinea);
+					});
+					stream.end
+				});
+			}
+			resolve(true);
+		});
+	});
+}
+exports.CodeArchivo = CodeArchivo;
 //-----------------------------------------------------------------------------------------------------------------------------------------
 function CP_Array(Arr_origen, Arr_Destino) {
 	for (var i = 0; i < Arr_origen.length - 1; i++) {
@@ -341,3 +364,25 @@ function PorcentajeCercania(DistL, DistC) {
 	return (-2.56 * (DistL + DistC) + 112).toFixed(1) + '%';
 }
 exports.PorcentajeCercania = PorcentajeCercania;
+function EncDecData(szData){
+	const KEY_TEXT ="BrujulaConstituyente"
+	const KEY_OFFSET=38
+	var bytKey=new Array()
+	var bytData=new Array()
+	var szKey=""
+	for (lNum = 1; lNum < (Math.trunc(szData.length/KEY_TEXT.length)+1); lNum++) {
+		szKey=szKey+KEY_TEXT
+	}
+	bytKey=szKey.substring(0,szData.length);
+	bytData=szData
+	for (lNum = 0; lNum < bytData.length-1; lNum++) {
+		if (lNum % 2 == 0){
+			bytData[lNum]=bytData[lNum] ^ bytKey[lNum]+KEY_OFFSET 
+		}else{
+			bytData[lNum]=bytData[lNum] ^ bytKey[lNum]-KEY_OFFSET 
+
+		}
+	}
+	return (bytData)
+}
+exports.EncDecData=EncDecData;
