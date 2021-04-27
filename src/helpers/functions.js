@@ -107,7 +107,7 @@ function CodeArchivo(archivo) {
 				stream.once('open', function (fd) {
 					Arr_Lineas.forEach(function (linea){
 						//console.log("Linea Recibida "+linea)
-						var EncLinea=EncDecData(linea);
+						var EncLinea=EncDecData(linea+'\r\n');
 						//console.log("Linea Codificada "+EncLinea)
 						stream.write(EncLinea);
 					});
