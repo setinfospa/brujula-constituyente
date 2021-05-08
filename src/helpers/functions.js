@@ -255,16 +255,16 @@ function RecorreCandidatos() {
 
 			if (DisL < 100) {
 				Arr_Resultado.push([
-					Arr_Candidatos[cFilC][4], //nom1
-					Arr_Candidatos[cFilC][5], //nom2
-					Arr_Candidatos[cFilC][6], //apell1
-					Arr_Candidatos[cFilC][7], //apell2
-					Arr_Candidatos[cFilC][8], //lista
-					Arr_Candidatos[cFilC][9], //Partido
-					Arr_Candidatos[cFilC][14],//Web
-					Arr_Candidatos[cFilC][0], //Code Candidato
-					DisL,                     //Distancia Lista
-					DisC,					  //Distancia Candidato
+					Arr_Candidatos[cFilC][4],
+					Arr_Candidatos[cFilC][5],
+					Arr_Candidatos[cFilC][6],
+					Arr_Candidatos[cFilC][7],
+					Arr_Candidatos[cFilC][8],
+					Arr_Candidatos[cFilC][9],
+					Arr_Candidatos[cFilC][14],
+					Arr_Candidatos[cFilC][0],
+					DisL,
+					DisC,
 				]);
 				cFilW++;
 			}
@@ -300,10 +300,10 @@ function RecomiendaCandidato() {
 					//Ordena segun Notas*********************************************************************
 					MaxFil = res - 1; //ultima fila escrita
 					Arr_Resultado = Arr_Resultado.sort(function comparar(a, b) {
-						return a[9] - b[9];
+						return a[8] - b[8];
 					});
 					Arr_Resultado = Arr_Resultado.sort(function comparar(a, b) {
-						return a[8] - b[8];
+						return a[9] - b[9];
 					});
 					//Ordena La escritura del archivo de Salida
 					//Datos de comunas *****************************************************
