@@ -2,12 +2,15 @@ const { response } = require('express');
 const path = require('path');
 const fs = require('fs');
 const { debug } = require('console');
+const { networkInterfaces } = require('os');
+var moment = require('moment');
 
 var Arr_Comunas = new Array();
 var Arr_Candidatos = new Array();
 var Arr_Preguntas = new Array();
 var Arr_Respuestas;
 var Arr_Resultado;
+var FechaImpresa= new Date;
 let name;
 
 var cColR; //contador columna respuesta
@@ -94,6 +97,24 @@ function EscribeArchivo(archivo, contenido) {
 	
 }
 exports.EscribeArchivo = EscribeArchivo;
+function MarcaDeTiempo(archivo) {
+	var stream = fs.createWriteStream(archivo,{'flags': 'a','encoding': null,'mode': 0666});
+	var ahora = new Date()
+	var mahora = moment(ahora)
+	var mimpreso=moment(FechaImpresa)
+	console.log("FechaImpresa: "+FechaImpresa)
+	console.log("Ahora: "+ahora)
+	console.log("Diferencia en dias = "+mahora.diff(mimpreso,'days'))
+	if (mahora.diff(mimpreso,'days')>0) { 
+		stream.once('open', function (fd) {
+			stream.write(ahora+",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\r\n");
+			stream.end();
+		});
+		FechaImpresa=ahora
+	}
+	console.log("Fecha ipresa : "+FechaImpresa)
+}
+exports.MarcaDeTiempo = MarcaDeTiempo;
 
 function CodeArchivo(archivo) {
 	return new Promise(function (resolve, reject) {
@@ -262,6 +283,7 @@ function RecomiendaCandidato() {
 	var MaxFil; //fila maxima
 	var objeSalida = new Object();
 	var Arr_Res_Peor = new Array();
+	var Arr_Cand_Salida = new Array();
 	return new Promise(function (resolve, reject) {
 		Arr_Resultado = [];
 		MaxPreg = 45;
@@ -345,6 +367,8 @@ function RecomiendaCandidato() {
 					};
 					//guarda Peor****************************************************************************
 					//console.log(Arr_Salida)
+					Arr_Cand_Salida.push(Arr_Respuestas[0],Arr_Resultado[0][7],Arr_Resultado[1][7],Arr_Resultado[2][7])
+					EscribeArchivo(path.join(__dirname, '../database/Resul.csv'), Arr_Cand_Salida);
 					resolve(objeSalida);
 				}
 			} else {
