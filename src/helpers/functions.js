@@ -255,10 +255,10 @@ function RecomiendaCandidato() {
 					//Ordena segun Notas*********************************************************************
 					MaxFil = res - 1; //ultima fila escrita
 					Arr_Resultado = Arr_Resultado.sort(function comparar(a, b) {
-						return a[8] - b[8];
+						return a[9] - b[9];
 					});
 					Arr_Resultado = Arr_Resultado.sort(function comparar(a, b) {
-						return a[9] - b[9];
+						return a[8] - b[8];
 					});
 					//Ordena La escritura del archivo de Salida
 					//Datos de comunas *****************************************************
