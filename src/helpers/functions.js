@@ -325,19 +325,23 @@ function RecomiendaCandidato() {
 					}
 					//resultados Mejores Candidatos**********************************************************
 					console.log(Arr_Resultado.length)
+					AuxSalida="["
 					for (cFilC = 0; cFilC <Arr_Resultado.length; cFilC++) {
-						AuxSalida= AuxSalida + "{Nombre1:"  			+ Arr_Resultado[cFilC][0]+ ","+
-												"Nombre2:"  			+ Arr_Resultado[cFilC][1]+","+
-												"Apellido1:"			+ Arr_Resultado[cFilC][2]+","+
-												"Apellido2:"			+ Arr_Resultado[cFilC][3]+","+
-												"Lista:"				+ Arr_Resultado[cFilC][4]+","+
-												"Partido:"				+ Arr_Resultado[cFilC][5]+","+
-												"Web:"					+ Arr_Resultado[cFilC][6]+","+
-												"Codigo_candidato: 	"	+ Arr_Resultado[cFilC][7]+","+
-												"Porcentaje_Cercania: "	+ PorcentajeCercania(Arr_Resultado[cFilC][8], Arr_Resultado[cFilC][9])+
-												",},"
+						AuxSalida= AuxSalida + '{"Nombre1":'  			+'"' +Arr_Resultado[cFilC][0]+ '",'+
+												'"Nombre2":'  			+'"' + Arr_Resultado[cFilC][1]+ '",'+
+												'"Apellido1":'			+'"' + Arr_Resultado[cFilC][2]+ '",'+
+												'"Apellido2":'			+'"' + Arr_Resultado[cFilC][3]+ '",'+
+												'"Lista":'				+'"' + Arr_Resultado[cFilC][4]+ '",'+
+												'"Partido":'				+'"' + Arr_Resultado[cFilC][5]+ '",'+
+												'"Web":'					+'"' + Arr_Resultado[cFilC][6]+ '",'+
+												'"Codigo_candidato":'	+'"' + Arr_Resultado[cFilC][7]+ '",'+
+												'"Porcentaje_Cercania":'	+'"' + PorcentajeCercania(Arr_Resultado[cFilC][8], Arr_Resultado[cFilC][9])+ '"'+
+												'},'
 					}
-					objeSalida.mejoresCandidatos = [AuxSalida]
+					AuxSalida=AuxSalida.substring(0,AuxSalida.length -1);
+					AuxSalida=AuxSalida +"]"
+					//console.log(AuxSalida)
+					objeSalida.mejoresCandidatos = JSON.parse(AuxSalida)
 					/*objeSalida.mejoresCandidatos = [
 						{
 							Nombre1: Arr_Resultado[0][0],
@@ -374,7 +378,7 @@ function RecomiendaCandidato() {
 						},
 					];
 					*/
-					console.log(AuxSalida)
+					console.log(objeSalida)
 					Arr_Cand_Salida.push(Arr_Respuestas[0])
 					for (cFilC = 0; cFilC < Arr_Resultado.length; cFilC++) {
 						Arr_Cand_Salida.push(Arr_Resultado[cFilC][7])
