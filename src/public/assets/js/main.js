@@ -3,7 +3,6 @@ regions.addEventListener('change', (e) => {
 	regiones.forEach((region) => {
 		if (region.NombreRegion == e.target.value) {
 			region.comunas.forEach((comuna) => {
-				console.log(e.target.value);
 				var option = document.createElement('option'); //Creamos la opcion
 				option.innerHTML = comuna; //Metemos el texto en la opcion
 				option.value = comuna;
@@ -445,7 +444,6 @@ var regiones = [
 
 window.addEventListener('load', function (event) {
 	let form = $('#wizard');
-	console.log(form.validate());
 
 	let parent_fieldset = $('.multisteps-form__panel.js-active');
 
@@ -485,11 +483,6 @@ $(function () {
 	$('.datepicker').datepicker({
 		clearBtn: true,
 		format: 'dd/mm/yyyy',
-	});
-
-	$('.services-select-option li').on('click', function () {
-		$('.services-select-option li').removeClass('active');
-		$(this).addClass('active');
 	});
 
 	$('.opti-list ul li').on('click', function (e) {
@@ -650,6 +643,19 @@ $(function () {
 		$(this).addClass('active');
 	});
 
+	$('.asdd').on('click', function () {
+		let parent_fieldset = $('.multisteps-form__panel.js-active');
+		let inputs = parent_fieldset.find('.bg-white');
+
+		inputs.each((idx, input) => {
+			$(input).removeClass('active');
+			$(input).find('input[type=radio]').removeAttr('checked');
+		});
+
+		$(this).addClass('active');
+		$(this).find('input[type=radio]').attr('checked', 'checked');
+	});
+
 	//PREV/NEXT BTNS CLICK
 	DOMstrings.stepsForm.addEventListener('click', (e) => {
 		const eventTarget = e.target;
@@ -676,16 +682,12 @@ $(function () {
 			setActiveStep(activePanelNum);
 			setActivePanel(activePanelNum);
 		} else if (eventTarget.classList.contains(`${DOMstrings.stepNextBtnClass}`)) {
-			// var inputs = document.querySelectorAll('input');
-			// console.log(inputs);
-
 			let form = $('#wizard');
 			form.validate();
 
 			let parent_fieldset = $('.multisteps-form__panel.js-active');
 			let next_step = true;
 			let inputs = parent_fieldset.find('.asd');
-			let name = parent_fieldset.find('.form-control');
 			let array = [];
 
 			parent_fieldset.find('.required').each(function () {
