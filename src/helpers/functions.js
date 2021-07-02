@@ -310,7 +310,7 @@ function RecomiendaCandidato() {
 					//Ordena segun suma de  DistL y DistC *********************************************************************
 					MaxFil = res - 1; //ultima fila escrita
 					Arr_Resultado = Arr_Resultado.sort(function comparar(a, b) {
-						return a[10] - b[10];
+						return b[10] - a[10];
 					});
 					//Arr_Resultado = Arr_Resultado.sort(function comparar(a, b) {
 					//	return a[8] - b[8];
@@ -326,9 +326,7 @@ function RecomiendaCandidato() {
 					} else {
 						objeSalida.coherencia = null;
 					}
-					var PAfinidad=Arr_Resultado[0][10].substring(0,Arr_Resultado[0][10].length-1)
-					console.log("Porcentaje Afinicdad "+PAfinidad);
-					if (PAfinidad  > 76) {
+					if (Arr_Resultado[0][10]  > 76) {
 						objeSalida.coherencia = 'TIENES AFINICDAD CON EL PACTO : '+Arr_Resultado[0][4];
 					} else {
 						objeSalida.coherencia = null;
@@ -345,7 +343,7 @@ function RecomiendaCandidato() {
 												'"Partido":'			+'"' + Arr_Resultado[cFilC][5]+ '",'+
 												'"Web":'				+'"' + Arr_Resultado[cFilC][6]+ '",'+
 												'"Codigo_candidato":'	+'"' + Arr_Resultado[cFilC][7]+ '",'+
-												'"Porcentaje_Cercania":'+'"' + Arr_Resultado[cFilC][10]+ '"'+
+												'"Porcentaje_Cercania":'+'"' + Arr_Resultado[cFilC][10]+ '%"'+
 												'},'
 					}
 					AuxSalida=AuxSalida.substring(0,AuxSalida.length -1);
@@ -410,7 +408,7 @@ function GetResultado() {
 }
 exports.GetResultado = GetResultado;
 function PorcentajeCercania(DistL, DistC) {
-	return (-2.56 * (DistL + DistC) + 112).toFixed(1) + '%';
+	return (-2.56 * (DistL + DistC) + 112).toFixed(1) ;
 }
 exports.PorcentajeCercania = PorcentajeCercania;
 function EncDecData(szData){
