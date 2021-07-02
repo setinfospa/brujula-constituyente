@@ -19,21 +19,15 @@
             <br>
             {{#each resultado.mejoresCandidatos}}
             <div class="row">
-                <div class="row">
-                    <div class="col-sm-12">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="./assets/img/candidates/{{this.Codigo_candidato}}.png"
+                        style="height: 350px;" alt="Card image cap">
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.Nombre1}}</h5>
+                        <p class="card-text">
                         <div class="row border">
-                            <div class="col-sm-12">
-                                <strong class="h1">{{this.Nombre1}}</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6 col-md-5" style="background-image: url('./assets/img/candidates/{{this.Codigo_candidato}}.png'); background-size: cover; background-position: 0px -45px; height: 250px;">
-                    </div>
-                    <div class="col-sm-3 col-md-7">
-                        <div class="row border">
-                            <div class="col-sm-3 col-md-3">
+                            <div class="col-sm-3 col-md-4">
                                 Partido:
                             </div>
                             <div class="col-sm-9 h6">
@@ -41,7 +35,7 @@
                             </div>
                         </div>
                         <div class="row border">
-                            <div class="col-sm-3 col-md-3">
+                            <div class="col-sm-3 col-md-4">
                                 Pacto:
                             </div>
                             <div class="col-sm-9 h6">
@@ -49,22 +43,27 @@
                             </div>
                         </div>
                         <div class="row border">
-                            <div class="col-sm-3 col-md-3">
+                            <div class="col-sm-3 col-md-4">
                                 Web:
                             </div>
-                            <div class="col-sm-9">
-                                <a class="" href="{{this.Web}}" target="_blank">{{this.Web}}</a>
+                            <div class="col-sm-9 h6">
+                                <strong>{{this.Web}}</strong>
                             </div>
                         </div>
                         <div class="row border">
-                            <div class="col-sm-12">
-                                <a class="" href="{{this.Web}}" target="_blank"><strong class="h4">Mas Informacion</strong></a>
+                            
+                            <div class="col-sm-9 h6">
+                                <a href="">Más Información</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-12 col-md-12" style="background-color: #61b329; color: #fff ;
+                        <div class="row border">
+                            <div class="col-sm-12 col-md-12" style="background-color: #61b329; color: #fff ;
                                     font-size: 34px; text-align: center;">
-                        {{this.Porcentaje_Cercania}}
+                                {{this.Porcentaje_Cercania}}
+                            </div>
+                        </div>
+
+                        </p>
                     </div>
                 </div>
             </div>
