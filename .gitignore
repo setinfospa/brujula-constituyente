@@ -4,6 +4,6 @@ npm-debug.log
 .env
 .DS_Store
 
-src/database/Result.csv
+src/database/Resul.csv
 src/database/Rsp.csv
 src/database/Rsp.csv.bin
