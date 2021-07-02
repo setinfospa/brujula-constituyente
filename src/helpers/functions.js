@@ -10,7 +10,7 @@ var Arr_Candidatos = new Array();
 var Arr_Preguntas = new Array();
 var Arr_Respuestas;
 var Arr_Resultado;
-var FechaImpresa = new Date();
+var FechaImpresa= new Date;
 let name;
 
 var cColR; //contador columna respuesta
@@ -42,14 +42,23 @@ exports.CargaBD = CargaBD;
 function ProcesaRespuestas(Respuestas) {
 	return new Promise(function (resolve, reject) {
 		//leeArchivo(Respuestas).then( Arr_Lineas=> {
-		//console.log(Respuestas);
+		console.log("Respuestas.length "+Respuestas.length);
+		console.log(Respuestas)
+		var lengPreguntas=Arr_Preguntas.length-1
+		var lengRespuestas=Respuestas.length
 		if (Respuestas.length > 0) {
 			name = Respuestas[0];
+			for (let index = 0; index < (lengPreguntas-lengRespuestas); index++) {
+				let string = '';
+				Respuestas.push(string);
+			}
 			Arr_Resultado = new Array();
-			Arr_Respuestas = new Array(Arr_Preguntas.length - 1);
-			CP_Array(Respuestas, Arr_Respuestas);
-			Arr_Respuestas[Arr_Respuestas.length - 2] = 1;
-			Arr_Respuestas[Arr_Respuestas.length - 1] = 5;
+			Arr_Respuestas = new Array();
+			Arr_Respuestas=Respuestas.slice(0,lengPreguntas)
+			//Arr_Respuestas[Arr_Respuestas.length - 2] = 1;
+			//Arr_Respuestas[Arr_Respuestas.length - 1] = 5;
+			console.log("ArrayPreguntas.leng "+(lengPreguntas) +" Array Respuestas")
+			console.log(Arr_Respuestas)
 			RecomiendaCandidato().then((Respuesta) => resolve(Respuesta));
 		} else {
 			reject(error);
@@ -85,7 +94,7 @@ function leeArchivo(archivo) {
 exports.leeArchivo = leeArchivo;
 //-----------------------------------------------------------------------------------------------------------------------------------------
 function EscribeArchivo(archivo, contenido) {
-	var stream = fs.createWriteStream(archivo, { flags: 'a', encoding: null, mode: 0666 });
+	var stream = fs.createWriteStream(archivo,{'flags': 'a','encoding': null,'mode': 0666});
 	stream.once('open', function (fd) {
 		contenido.forEach(function (linea) {
 			var Auxlinea = linea;
@@ -98,44 +107,42 @@ function EscribeArchivo(archivo, contenido) {
 }
 exports.EscribeArchivo = EscribeArchivo;
 function MarcaDeTiempo(archivo) {
-	var stream = fs.createWriteStream(archivo, { flags: 'a', encoding: null, mode: 0666 });
-	var ahora = new Date();
-	var mahora = moment(ahora);
-	var mimpreso = moment(FechaImpresa);
-	console.log('FechaImpresa: ' + FechaImpresa);
-	console.log('Ahora: ' + ahora);
-	console.log('Diferencia en dias = ' + mahora.diff(mimpreso, 'days'));
-	if (mahora.diff(mimpreso, 'days') > 0) {
+	var stream = fs.createWriteStream(archivo,{'flags': 'a','encoding': null,'mode': 0666});
+	var ahora = new Date()
+	var mahora = moment(ahora)
+	var mimpreso=moment(FechaImpresa)
+	console.log("FechaImpresa: "+FechaImpresa)
+	console.log("Ahora: "+ahora)
+	console.log("Diferencia en dias = "+mahora.diff(mimpreso,'days'))
+	if (mahora.diff(mimpreso,'days')>0) { 
 		stream.once('open', function (fd) {
-			stream.write(ahora + ',,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\r\n');
+			stream.write(ahora+",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\r\n");
 			stream.end();
 		});
-		FechaImpresa = ahora;
+		FechaImpresa=ahora
 	}
-	console.log('Fecha ipresa : ' + FechaImpresa);
+	console.log("Fecha ipresa : "+FechaImpresa)
 	return;
 }
 exports.MarcaDeTiempo = MarcaDeTiempo;
 
 function CodeArchivo(archivo) {
 	return new Promise(function (resolve, reject) {
-		if (fs.existsSync(archivo) == false) {
-			resolve(false);
-		}
+		if (fs.existsSync(archivo)==false) {resolve(false);}
 		fs.readFile(archivo, 'utf8', (error, datos) => {
 			if (error) {
 				reject(error);
 			} else {
-				var stream = fs.createWriteStream(archivo + '.bin');
+				var stream = fs.createWriteStream(archivo+".bin");
 				Arr_Lineas = datos.split('\r\n');
 				stream.once('open', function (fd) {
-					Arr_Lineas.forEach(function (linea) {
+					Arr_Lineas.forEach(function (linea){
 						//console.log("Linea Recibida "+linea)
-						var EncLinea = EncDecData(linea + '\r\n');
+						var EncLinea=EncDecData(linea+'\r\n');
 						//console.log("Linea Codificada "+EncLinea)
 						stream.write(EncLinea);
 					});
-					stream.end;
+					stream.end
 				});
 			}
 			resolve(true);
@@ -261,7 +268,7 @@ function RecorreCandidatos() {
 			DisC = CalculaDistanciaCandidato(cFilC);
 			//console.log("Distancia Candidato :"+DisC)
 			DisT = DisL + DisC;
-			//console.log(Arr_Candidatos[cFilC][4]+" DistanciaLista: " + DisL);
+			console.log(Arr_Candidatos[cFilC][4]+" DistanciaLista: " + DisL);
 			if (DisL < 100) {
 				Arr_Resultado.push([
 					Arr_Candidatos[cFilC][4], //nom1
@@ -270,10 +277,10 @@ function RecorreCandidatos() {
 					Arr_Candidatos[cFilC][7], //apell2
 					Arr_Candidatos[cFilC][8], //lista
 					Arr_Candidatos[cFilC][9], //Partido
-					Arr_Candidatos[cFilC][14], //Web
+					Arr_Candidatos[cFilC][14],//Web
 					Arr_Candidatos[cFilC][0], //Code Candidato
-					DisL, //Distancia Lista
-					DisC, //Distancia Candidato
+					DisL,                     //Distancia Lista
+					DisC,					  //Distancia Candidato
 					PorcentajeCercania(DisL, DisC),
 				]);
 				cFilW++;
@@ -293,7 +300,7 @@ function RecomiendaCandidato() {
 	var MaxFil; //fila maxima
 	var objeSalida = new Object();
 	var cFilC; //contador candidatos
-	var AuxSalida = ' ';
+	var AuxSalida = " ";
 	var Arr_Res_Peor = new Array();
 	var Arr_Cand_Salida = new Array();
 	return new Promise(function (resolve, reject) {
@@ -328,59 +335,30 @@ function RecomiendaCandidato() {
 					} else {
 						objeSalida.coherencia = null;
 					}
-					if (Arr_Resultado[0][10] > 76) {
-						objeSalida.coherencia = 'TIENES AFINICDAD CON EL PACTO : ' + Arr_Resultado[0][4];
+					if (Arr_Resultado[0][10]  > 76) {
+						objeSalida.coherencia = 'TIENES AFINICDAD CON EL PACTO : '+Arr_Resultado[0][4];
 					} else {
 						objeSalida.coherencia = null;
 					}
 					//resultados Mejores Candidatos**********************************************************
-					console.log(Arr_Resultado.length);
-					AuxSalida = '[';
-					for (cFilC = 0; cFilC < Arr_Resultado.length; cFilC++) {
-						AuxSalida =
-							AuxSalida +
-							'{"Nombre1":' +
-							'"' +
-							Arr_Resultado[cFilC][0] +
-							'",' +
-							'"AporteServel":' +
-							'"' +
-							Arr_Resultado[cFilC][1] +
-							'",' +
-							'"NAportantes":' +
-							'"' +
-							Arr_Resultado[cFilC][2] +
-							'",' +
-							'"GrandesAportes":' +
-							'"' +
-							Arr_Resultado[cFilC][3] +
-							'",' +
-							'"Lista":' +
-							'"' +
-							Arr_Resultado[cFilC][4] +
-							'",' +
-							'"Partido":' +
-							'"' +
-							Arr_Resultado[cFilC][5] +
-							'",' +
-							'"Web":' +
-							'"' +
-							Arr_Resultado[cFilC][6] +
-							'",' +
-							'"Codigo_candidato":' +
-							'"' +
-							Arr_Resultado[cFilC][7] +
-							'",' +
-							'"Porcentaje_Cercania":' +
-							'"' +
-							Arr_Resultado[cFilC][10] +
-							'%"' +
-							'},';
+					console.log(Arr_Resultado.length)
+					AuxSalida="["
+					for (cFilC = 0; cFilC <Arr_Resultado.length; cFilC++) {
+						AuxSalida= AuxSalida + '{"Nombre1":'  			+'"' +Arr_Resultado[cFilC][0]+ '",'+
+												'"AporteServel":' 		+'"' + Arr_Resultado[cFilC][1]+ '",'+
+												'"NAportantes":'		+'"' + Arr_Resultado[cFilC][2]+ '",'+
+												'"GrandesAportes":'		+'"' + Arr_Resultado[cFilC][3]+ '",'+
+												'"Lista":'				+'"' + Arr_Resultado[cFilC][4]+ '",'+
+												'"Partido":'			+'"' + Arr_Resultado[cFilC][5]+ '",'+
+												'"Web":'				+'"' + Arr_Resultado[cFilC][6]+ '",'+
+												'"Codigo_candidato":'	+'"' + Arr_Resultado[cFilC][7]+ '",'+
+												'"Porcentaje_Cercania":'+'"' + Arr_Resultado[cFilC][10]+ '%"'+
+												'},'
 					}
-					AuxSalida = AuxSalida.substring(0, AuxSalida.length - 1);
-					AuxSalida = AuxSalida + ']';
+					AuxSalida=AuxSalida.substring(0,AuxSalida.length -1);
+					AuxSalida=AuxSalida +"]"
 					//console.log(AuxSalida)
-					objeSalida.mejoresCandidatos = JSON.parse(AuxSalida);
+					objeSalida.mejoresCandidatos = JSON.parse(AuxSalida)
 					/*objeSalida.mejoresCandidatos = [
 						{
 							Nombre1: Arr_Resultado[0][0],
@@ -417,10 +395,10 @@ function RecomiendaCandidato() {
 						},
 					];
 					*/
-					console.log(objeSalida);
-					Arr_Cand_Salida.push(Arr_Respuestas[0]);
+					console.log(objeSalida)
+					Arr_Cand_Salida.push(Arr_Respuestas[0])
 					for (cFilC = 0; cFilC < Arr_Resultado.length; cFilC++) {
-						Arr_Cand_Salida.push(Arr_Resultado[cFilC][7]);
+						Arr_Cand_Salida.push(Arr_Resultado[cFilC][7])
 					}
 					EscribeArchivo(path.join(__dirname, '../database/Resul.csv'), Arr_Cand_Salida);
 					resolve(objeSalida);
@@ -439,27 +417,28 @@ function GetResultado() {
 }
 exports.GetResultado = GetResultado;
 function PorcentajeCercania(DistL, DistC) {
-	return (-2.56 * (DistL + DistC) + 112).toFixed(1);
+	return (-2.56 * (DistL + DistC) + 112).toFixed(1) ;
 }
 exports.PorcentajeCercania = PorcentajeCercania;
-function EncDecData(szData) {
-	const KEY_TEXT = 'BrujulaConstituyente';
-	const KEY_OFFSET = 38;
-	var bytKey = new Array();
-	var bytData = new Array();
-	var szKey = '';
-	for (lNum = 1; lNum < Math.trunc(szData.length / KEY_TEXT.length) + 1; lNum++) {
-		szKey = szKey + KEY_TEXT;
+function EncDecData(szData){
+	const KEY_TEXT ="BrujulaConstituyente"
+	const KEY_OFFSET=38
+	var bytKey=new Array()
+	var bytData=new Array()
+	var szKey=""
+	for (lNum = 1; lNum < (Math.trunc(szData.length/KEY_TEXT.length)+1); lNum++) {
+		szKey=szKey+KEY_TEXT
 	}
-	bytKey = szKey.substring(0, szData.length);
-	bytData = szData;
-	for (lNum = 0; lNum < bytData.length - 1; lNum++) {
-		if (lNum % 2 == 0) {
-			bytData[lNum] = bytData[lNum] ^ (bytKey[lNum] + KEY_OFFSET);
-		} else {
-			bytData[lNum] = bytData[lNum] ^ (bytKey[lNum] - KEY_OFFSET);
+	bytKey=szKey.substring(0,szData.length);
+	bytData=szData
+	for (lNum = 0; lNum < bytData.length-1; lNum++) {
+		if (lNum % 2 == 0){
+			bytData[lNum]=bytData[lNum] ^ bytKey[lNum]+KEY_OFFSET 
+		}else{
+			bytData[lNum]=bytData[lNum] ^ bytKey[lNum]-KEY_OFFSET 
+
 		}
 	}
-	return bytData;
+	return (bytData)
 }
-exports.EncDecData = EncDecData;
+exports.EncDecData=EncDecData;
