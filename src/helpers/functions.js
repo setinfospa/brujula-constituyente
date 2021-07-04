@@ -44,6 +44,10 @@ function ProcesaRespuestas(Respuestas) {
 		//leeArchivo(Respuestas).then( Arr_Lineas=> {
 		console.log("Respuestas.length "+Respuestas.length);
 		console.log(Respuestas)
+		for (let index = 0; index < 7; index++) {
+			let string = '';
+			Respuestas.splice(26, 0, string);
+		}
 		var lengPreguntas=Arr_Preguntas.length-1
 		var lengRespuestas=Respuestas.length
 		if (Respuestas.length > 0) {
