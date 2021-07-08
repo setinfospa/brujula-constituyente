@@ -58,7 +58,7 @@ function ProcesaRespuestas(Respuestas) {
 			}
 			Arr_Resultado = new Array();
 			Arr_Respuestas = new Array();
-			Arr_Respuestas=Respuestas.slice(0,lengPreguntas)
+			Arr_Respuestas=Respuestas.slice(0,lengPreguntas) //limita respuestas recibidas a el largo de las preguntas
 			//Arr_Respuestas[Arr_Respuestas.length - 2] = 1;
 			//Arr_Respuestas[Arr_Respuestas.length - 1] = 5;
 			console.log("ArrayPreguntas.leng "+(lengPreguntas) +" Array Respuestas")
@@ -169,6 +169,7 @@ function BuscaDistrito() {
 		try {
 			Comuna = Arr_Respuestas[1];
 			console.log(Arr_Respuestas[1]);
+			Comuna="Bulnes" //Fuerzo distrito 19
 			for (var cFil = 2; cFil < 346; cFil++) {
 				if (Comuna == Arr_Comunas[cFil][2]) {
 					Distr = Arr_Comunas[cFil][4]; //distrito del encuestado
@@ -233,6 +234,7 @@ function CalculaDistanciaLista(filp) {
 				if (Arr_Respuestas[cFilR + 1].length == 0) {
 					//Caso Respesta es valida
 					NotaR = 99; //caso casilla vacía
+					//console.log("Casilla vacia "+cFilR)
 				} else {
 					NotaR = Arr_Respuestas[cFilR + 1]; //caso casilla buena
 				}
@@ -356,7 +358,7 @@ function RecomiendaCandidato() {
 												'"Partido":'			+'"' + Arr_Resultado[cFilC][5]+ '",'+
 												'"Web":'				+'"' + Arr_Resultado[cFilC][6]+ '",'+
 												'"Codigo_candidato":'	+'"' + Arr_Resultado[cFilC][7]+ '",'+
-												'"Porcentaje_Cercania":'+'"' + Arr_Resultado[cFilC][10]+ '%"'+
+												'"Porcentaje_Cercania":'+'"' + Arr_Resultado[cFilC][10]+ '"'+
 												'},'
 					}
 					AuxSalida=AuxSalida.substring(0,AuxSalida.length -1);
