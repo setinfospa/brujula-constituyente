@@ -342,7 +342,7 @@ function RecomiendaCandidato() {
 						objeSalida.coherencia = null;
 					}
 					if (Arr_Resultado[0][10]  > 76) {
-						objeSalida.coherencia = 'TIENES AFINICDAD CON EL PACTO : '+Arr_Resultado[0][4];
+						objeSalida.coherencia = 'TIENES AFINIDAD CON EL PACTO : '+Arr_Resultado[0][4];
 					} else {
 						objeSalida.coherencia = null;
 					}

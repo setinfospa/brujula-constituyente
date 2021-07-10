@@ -4,7 +4,7 @@
 ;;;true;;;;;;;;;7;3;Indígena;;Desacuerdo;Se requiere mano dura para solucionar el conflicto mapuche.;1;1;;Permitir que los liceos/colegios seleccionen a los alumnos.;;Dar igual posibilidad de acceso a cualquier alumno.;
 ;;;;;;;;;;;;8;4;Laboral;Votacion Dip;Desacuerdo;El sueldo mínimo debe subir significativamente, incluso si eso implica más impuestos progresivos (el que más tiene más paga).;1;1;MD;D;I;A;MA
 ;;;;;;;;;;;;10;5;Laboral;;Acuerdo;La opinión de los trabajadores debe ser considerada en las decisiones de las empresas.;1;1;MD;D;I;A;MA
-;;;;;;;;;;;;13;6;Medio Ambiente;;Acuerdo;La protección del medio ambiente no puede significar mayores restricciones a las empresas.;1;1;;;;;
+;;;;;;;;;;;;13;6;Medio Ambiente;;Acuerdo;El crecimiento económico es más importante que la protección del medio ambiente.;1;1;;;;;
 ;;;;;;;;;;;;17;7;Medio Ambiente;;Acuerdo;Se debe privilegiar el transporte público (buses, tren, metro, etc.) antes que al transporte privado (autos y camiones);1;1;MD;D;I;A;MA
 ;;;;;;;;;;;;22;8;Modelo;Votacion Dip;Acuerdo;Una buena reforma tributaria entre otras cosas, debe aumentar los impuestos a las grandes fortunas.;1;1;MD;D;I;A;MA
 ;;;;;;;;;;;;24;9;Modelo;;Desacuerdo;Lo principal de una reforma tributaria es que sea atractiva para los inversionistas.;1;1;MD;D;I;A;MA
@@ -12,7 +12,7 @@
 ;;;;true;;;;;;;;31;11;Pensiones;UDP + votacion;Acuerdo;Respecto a pensiones;1;1;;Mantener el actual sistema de AFP y hacer mejoras, como aumentar las pensiones mínimas.;;Terminar con las AFP y cambiar a un sistema de reparto, público y solidario. Dejando los seguros privados como adicionales y voluntarios.;
 ;;;;;;;;;;;;34;12;Pensiones;;Desacuerdo;El sistema de pensiones de las fuerzas armadas, ejército, carabineros, etc. debe ser igual al de todos los chilenos;1;1;MD;D;I;A;MA
 ;;;;;;;;;;;;36;13;Recursos;;Desacuerdo;El agua debe ser un bien de uso público y tener como objetivo principal cubrir las necesidades básicas de las personas, antes que cualquier otro uso.;1;1;MD;D;I;A;MA
-;;;;;;;;;;;;39;14;Recursos;;;Aumentar el royalty minero o tributación por el cobre solo conseguirá disminuir la inversión y a la larga reducir los ingresos para el estado.;1;1;;;;;
+;;;;;;;;;;;;39;14;Recursos;;;Aumentar el royalty minero solo conseguirá disminuir la inversión y a la larga reducir los ingresos para el estado.;1;1;;;;;
 ;;;;;;;;;;;;42;15;Recursos;UDP;Acuerdo;El Estado debería ser el propietario de las empresas de servicios públicos (Energía eléctrica, agua potable y gas).;1;1;MD;D;I;A;MA
 ;;;;;;;;;;;;44;16;Recursos;UDP + votacion;Acuerdo;El Estado debe administrar directamente los recursos naturales estratégicos como el cobre, el litio y el agua.;1;1;MD;D;I;A;MA
 ;;;;;true;;;;;;;50;17;Salud;;Desacuerdo;Respecto al manejo de la pandemia era preferible;1;1;;Llamar al autocuidado, sin cuarentenas ni limitaciones de movilización.;Mantener la estrategia de cuarentenas dinámicas a nivel comunal.;Aumentar las medidas de cuidado en todo sentido, con cuarentenas más estrictas, apoyo social y cierre de aeropuerto en periodos criticos.;
