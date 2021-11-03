@@ -423,7 +423,7 @@ function GetResultado() {
 }
 exports.GetResultado = GetResultado;
 function PorcentajeCercania(DistL, DistC) {
-	return (-2.80 * (DistL + DistC) + 102).toFixed(1) ;
+	return (-3 * (DistL + DistC) + 103).toFixed(1) ;
 }
 exports.PorcentajeCercania = PorcentajeCercania;
 function EncDecData(szData){
