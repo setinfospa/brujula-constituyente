@@ -43,7 +43,6 @@ function ProcesaRespuestas(Respuestas) {
 	return new Promise(function (resolve, reject) {
 		//leeArchivo(Respuestas).then( Arr_Lineas=> {
 		console.log("Respuestas.length "+Respuestas.length);
-		console.log(Respuestas)
 		for (let index = 0; index < 7; index++) {
 			let string = '';
 			Respuestas.splice(26, 0, string);
@@ -168,7 +167,6 @@ function BuscaDistrito() {
 	return new Promise(function (resolve, reject) {
 		try {
 			Comuna = Arr_Respuestas[1];
-			console.log(Arr_Respuestas[1]);
 			Comuna="Bulnes" //Fuerzo distrito 19
 			for (var cFil = 2; cFil < 346; cFil++) {
 				if (Comuna == Arr_Comunas[cFil][2]) {
@@ -347,7 +345,6 @@ function RecomiendaCandidato() {
 						objeSalida.coherencia = null;
 					}
 					//resultados Mejores Candidatos**********************************************************
-					console.log(Arr_Resultado.length)
 					AuxSalida="["
 					for (cFilC = 0; cFilC <Arr_Resultado.length; cFilC++) {
 						AuxSalida= AuxSalida + '{"Nombre1":'  			+'"' +Arr_Resultado[cFilC][0]+ '",'+

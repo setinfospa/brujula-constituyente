@@ -12,16 +12,23 @@ let json = getQuestions();
 router.post('/process', async (req, res) => {
 	const obj = getJSONFromString(req.body); //Parametro recibido en la solicitud
 	const arr = Object.values(obj);
-	/*for (let index = 0; index < 7; index++) {
-		let string = '';
-		arr.splice(26, 0, string);
-	}
-	for (let index = 0; index < 10; index++) {
-		let string = '';
-		arr.push(string);
-	}
 	console.log(arr);
-	*/
+
+	arr.forEach((_, idx) => {
+		if(idx == 11) arr.splice(idx, 0,'3')
+		if(idx == 21) arr.splice(idx, 0,'3')
+		if(idx == 22) arr.splice(idx, 0,'3')
+	})
+
+	arr.forEach((_, idx) => {
+		if(idx == 27) {
+			arr.splice(idx, 0,'3')
+			arr.splice(idx, 0,'3')
+		}
+	})
+
+	console.log(arr);
+
 	var aux = await functions.MarcaDeTiempo(path.join(__dirname, '../database/Rsp.csv'));
 	var aux2 = await functions.EscribeArchivo(path.join(__dirname, '../database/Rsp.csv'), Object.values(obj));
 	const resultado = await functions.ProcesaRespuestas(arr);
