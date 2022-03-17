@@ -1,3 +1,21 @@
+@media screen and (max-width: 1199px) {
+	.form-content h2 {
+		padding: 10px 0px 2px 0px;
+	}
+
+	.form-content .step-no {
+		font-size: 14px;
+	}
+}
+
+.index {
+	font-size: 20px;
+}
+
+.text-blue {
+	color: blue;
+}
+
 a {
 	color: blue;
 }

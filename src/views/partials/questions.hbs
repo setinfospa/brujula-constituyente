@@ -1,337 +1,316 @@
 {{#each json}}
-<div class="multisteps-form__panel" data-animation="slideHorz">
-    <div class="wizard-forms">
-        <div class="inner pb-100 clearfix">
-            <div class="form-content pera-content">
-                <div class="step-inner-content">
-                    <span class="step-no bottom-line">{{this.Tema}}</span>
-                    <div class="step-progress float-end">
-                        <span>{{this.Code}} de 38</span>
-                        <div class="step-progress-bar">
-                            <div class="progress">
-                                <div class="progress-bar" style="width: {{this.ProgressBar}}%">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <span class="title-h2">
-                        {{this.Marcatemporal}}
-                    </span>
-                    <div class="alert alert-danger d-none d-inline" role="alert">
-                        Debe seleccionar una opción!
-                    </div>
-                    <div class="step-box">
-                        <div class="row">
-                            {{#if this.AprueboRechazo}}
-                            <div class="col">
-                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
+	<div class='multisteps-form__panel' data-animation='slideHorz'>
+		<div class='wizard-forms'>
+			<div class='inner pb-100 clearfix'>
+				<div class='form-content pera-content'>
+					<div class='step-inner-content'>
+						<span class='step-no bottom-line'>{{this.Tema}}</span>
+						<div class='step-progress float-end'>
+							<span>{{this.Code}} de 28</span>
+							<div class='step-progress-bar'>
+								<div class='progress'>
+									<div class='progress-bar' style='width: {{this.ProgressBar}}%'>
+									</div>
+								</div>
+							</div>
+						</div>
+						<span class='title-h2'>
+							{{this.Pregunta}}
+						</span>
+						<div class='alert alert-danger d-none d-inline' role='alert'>
+							Debe seleccionar una opción!
+						</div>
+						<div class='step-box'>
+							<div class='row'>
+								{{#if this._1}}
+									<div class='col'>
+										<div class='services-select-option'>
+											<ul>
+												<li class='bg-white asdd'><label>Se debe privilegiar la educación pública, de calidad, universal, como un derecho y financiada a través de impuestos.
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
+												<li class='bg-white asdd'><label>Privilegiar que cada familia elija según sus posibilidades
+														económicas e intereses. (manteniendo una competencia entre el sistema público y privado)
+														<input
+															class='asd'
+															type='radio'
+															name='question_{{this.Code}}'
+															value='2'
+															required
+														/></label></li>
+											</ul>
+										</div>
+									</div>
+								{{else if this._2}}
+									<div class='col'>
+										<div class='services-select-option'>
+											<ul>
+												<li class='bg-white asdd'><label>Permitir que los liceos/colegios seleccionen a los alumnos.
+														<input
+															class='asd'
+															type='radio'
+															name='question_{{this.Code}}'
+															value='2'
+															required
+														/></label></li>
+												<li class='bg-white asdd'><label>Dar igual posibilidad de acceso a cualquier alumno.
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
+											</ul>
+										</div>
+									</div>
+								{{else if this._11}}
+									<div class='col'>
+										<div class='services-select-option'>
+											<ul>
+												<li class='bg-white asdd'><label>Mantener el actual sistema de AFP y hacer mejoras como aumentar
+														las pensiones mínimas.
+														<input
+															class='asd'
+															type='radio'
+															name='question_{{this.Code}}'
+															value='2'
+															required
+														/></label></li>
+												<li class='bg-white asdd'><label>Terminar con las AFP y cambiar a un sistema de reparto, público
+														y solidario. Dejando los seguros privados como adicionales y voluntarios.
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
+											</ul>
+										</div>
+									</div>
+								{{else if this._17}}
+									<div class='col'>
+										<div class='services-select-option'>
+											<ul>
+												<li class='bg-white asdd'><label>Llamar al autocuidado, sin cuarentenas ni limitaciones de
+														movilización.
+														<input
+															class='asd'
+															type='radio'
+															name='question_{{this.Code}}'
+															value='2'
+															required
+														/></label></li>
+												<li class='bg-white asdd'><label>Mantener la estrategia de cuarentenas dinámicas a nivel
+														comunal.
+														<input
+															class='asd'
+															type='radio'
+															name='question_{{this.Code}}'
+															value='3'
+															required
+														/></label></li>
+												<li class='bg-white asdd'><label>Aumentar las medidas de cuidado en todo sentido, con
+														cuarentenas más estrictas, apoyo social y cierre de aeropuerto en periodos criticos.
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
+											</ul>
+										</div>
+									</div>
+								{{else if this._19}}
+									<div class='col'>
+										<div class='services-select-option'>
+											<ul>
+												<li class='bg-white asdd'><label>Es necesario que se realicen reformas al sistema público, para
+														mejorar la atención sin embargo no se debe afectar al sistema privado.
+														<input
+															class='asd'
+															type='radio'
+															name='question_{{this.Code}}'
+															value='2'
+															required
+														/></label></li>
+												<li class='bg-white asdd'><label>Debe convertirse en un único sistema de salud universal de
+														calidad para todos. Dejando los seguros privados como adicionales y voluntarios.
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
+											</ul>
+										</div>
+									</div>
+								{{else if this._23}}
+									<div class='col'>
+										<div class='services-select-option'>
+											<ul>
+												<li class='bg-white asdd'><label>Prohibirse bajo cualquier causal.
+														<input
+															class='asd'
+															type='radio'
+															name='question_{{this.Code}}'
+															value='1'
+															required
+														/></label></li>
+												<li class='bg-white asdd'><label>Permitirse sólo en tres causales (riesgo vital madre,
+														inviabilidad del feto o violación).
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='2' /></label></li>
+												<li class='bg-white asdd'><label>Permitirse hasta las 14 semanas.
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
+											</ul>
+										</div>
+									</div>
+								{{else if this._25}}
+									<div class='col'>
+										<div class='services-select-option'>
+											<ul>
+												<li class='bg-white asdd'><label>Rechazo
+														<input
+															class='asd'
+															type='radio'
+															name='question_{{this.Code}}'
+															value='2'
+															required
+														/></label></li>
+												<li class='bg-white asdd'><label>Apruebo
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
+											</ul>
+										</div>
+									</div>
+								{{else if this._26}}
+									<div class='col'>
+										<div class='services-select-option'>
+											<ul>
+												<li class='bg-white asdd'><label>Mixta
+														<input
+															class='asd'
+															type='radio'
+															name='question_{{this.Code}}'
+															value='2'
+															required
+														/></label></li>
+												<li class='bg-white asdd'><label>Constitucional
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
+											</ul>
+										</div>
+									</div>
+								{{else if this._27}}
+									<div class='col'>
+										<div class='services-select-option'>
+											<ul>
+												<li class='bg-white asdd'><label>Estuve de acuerdo
+														<input
+															class='asd'
+															type='radio'
+															name='question_{{this.Code}}'
+															value='4'
+															required
+														/></label></li>
+												<li class='bg-white asdd'><label>Estuve en desacuerdo
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='2' /></label></li>
+											</ul>
+										</div>
+									</div>
+								{{else if this._28}}
+									<div class='col'>
+										<div class='services-select-option'>
+											<ul>
+												<li class='bg-white asdd'><label>Indiferente
+														<input
+															class='asd'
+															type='radio'
+															name='question_{{this.Code}}'
+															value='3'
+															required
+														/></label></li>
+												<li class='bg-white asdd'><label>Que no reciban grandes aportes
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
+											</ul>
+										</div>
+									</div>
+								{{else}}
+									<div class='col'>
+										<label id='{{this.Code}}1' class='step-box-content text-center relative-position'>
 
-                                    <span class="thumbs  t2">
-                                    </span>
+											<span class='thumbs t1'>
+											</span>
 
-                                    <span class="">
-                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="2" required />
-                                            <label for="">Rechazo</label></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="col">
-                                <label id="{{this.Code}}2" class="step-box-content text-center relative-position">
+											<span class=''>
+												<span class=''><input
+														class='asd'
+														type='radio'
+														name='question_{{this.Code}}'
+														value='1'
+														required
+													/></span>
+											</span>
+										</label>
+									</div>
+									<div class='col'>
+										<label id='{{this.Code}}2' class='step-box-content text-center relative-position'>
 
-                                    <span class="thumbs t4">
-                                    </span>
+											<span class='thumbs t2'>
+											</span>
 
+											<span class=''>
+												<span><input class='asd' type='radio' name='question_{{this.Code}}' value='2' /></span>
+											</span>
+										</label>
+									</div>
+									<div class='col'>
+										<label id='{{this.Code}}3' class='step-box-content text-center relative-position'>
 
-                                    <span class="">
-                                        <span><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="4"><label for="">Apruebo</label></span>
-                                    </span>
-                                </label>
-                            </div>
-                            {{else if this.MixtaConstitucional}}
-                            <div class="col-6">
-                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
+											<span class='thumbs t3'>
+											</span>
 
-                                    <span class="thumbs  t3">
-                                    </span>
+											<span class=''>
+												<span><input class='asd' type='radio' name='question_{{this.Code}}' value='3' /></span>
+											</span>
+										</label>
+									</div>
+									<div class='col'>
+										<label id='{{this.Code}}4' class='step-box-content text-center relative-position'>
 
-                                    <span class="">
-                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="2" required />
-                                            <label for="">Mixta</label></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="col-6">
-                                <label id="{{this.Code}}4" class="step-box-content text-center relative-position">
+											<span class='thumbs t4'>
+											</span>
 
-                                    <span class="thumbs t3">
-                                    </span>
+											<span class=''>
+												<span><input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></span>
+											</span>
+										</label>
+									</div>
+									<div class='col'>
+										<label id='{{this.Code}}5' class='step-box-contenttext-center relative-position'>
 
+											<span class='thumbs t5'>
+											</span>
 
-                                    <span class="">
-                                        <span><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="4"><label for="">Constitucional</label></span>
-                                    </span>
-                                </label>
-                            </div>
-                            {{else if this.Mujer}}
-                            <div class="col">
-                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
+											<span class=''>
+												<span><input class='asd' type='radio' name='question_{{this.Code}}' value='5' /></span>
+											</span>
+										</label>
+									</div>
+								{{/if}}
 
-                                    <span class="thumbs  t2">
-                                    </span>
-
-                                    <span class="">
-                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="2" required />
-                                            <label for="">Hombre</label></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="col">
-                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
-
-                                    <span class="thumbs  t3">
-                                    </span>
-
-                                    <span class="">
-                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="3" required />
-                                            <label for="">Indiferente</label></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="col">
-                                <label id="{{this.Code}}2" class="step-box-content text-center relative-position">
-                                    <span class="thumbs t4">
-                                    </span>
-                                    <span class="">
-                                        <span><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="4"><label for="">Mujer</label></span>
-                                    </span>
-                                </label>
-                            </div>
-                            {{else if this.Acuerdo}}
-                            <div class="col">
-                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
-
-                                    <span class="thumbs  t2">
-                                    </span>
-
-                                    <span class="">
-                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="2" required /><label for="">No</label>
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="col">
-                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
-
-                                    <span class="thumbs  t4">
-                                    </span>
-
-                                    <span class="">
-                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="4" required /><label for="">Si</label>
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                            {{else if this.Aportes}}
-                            <div class="col">
-                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
-
-                                    <span class="thumbs  t3">
-                                    </span>
-
-                                    <span class="">
-                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="3" required /><label for="">Indiferente</label>
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="col">
-                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
-
-                                    <span class="thumbs  t3">
-                                    </span>
-
-                                    <span class="">
-                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="4" required /><label for="">Sin grandes aportes</label>
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                            {{else if this.Anos}}
-                            <div class="col">
-                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
-
-                                    <span class="thumbs  t2">
-                                    </span>
-
-                                    <span class="">
-                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="2" required /><label for="">Mayor a 45</label>
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="col">
-                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
-
-                                    <span class="thumbs  t3">
-                                    </span>
-
-                                    <span class="">
-                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="3" required /><label for="">Indiferente</label>
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="col">
-                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
-
-                                    <span class="thumbs  t4">
-                                    </span>
-
-                                    <span class="">
-                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="4" required /><label for="">Menor a 45</label>
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                            {{else if this.Viva}}
-                            <div class="col">
-                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
-
-                                    <span class="thumbs  t3">
-                                    </span>
-
-                                    <span class="">
-                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="3" required /><label for="">Indiferente</label>
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="col">
-                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
-
-                                    <span class="thumbs  t4">
-                                    </span>
-
-                                    <span class="">
-                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="4" required /><label for="">Si</label>
-                                        </span>
-                                    </span>
-                                </label>
-                            </div>
-                            {{else}}
-                            <div class="col">
-                                <label id="{{this.Code}}1" class="step-box-content text-center relative-position">
-
-                                    <span class="thumbs  t1">
-                                    </span>
-
-                                    <span class="">
-                                        <span class=""><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="1" required /></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="col">
-                                <label id="{{this.Code}}2" class="step-box-content text-center relative-position">
-
-                                    <span class="thumbs t2">
-                                    </span>
-
-
-                                    <span class="">
-                                        <span><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="2"></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="col">
-                                <label id="{{this.Code}}3" class="step-box-content text-center relative-position">
-
-                                    <span class="thumbs t3">
-                                    </span>
-
-                                    <span class="">
-                                        <span><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="3"></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="col">
-                                <label id="{{this.Code}}4" class="step-box-content text-center relative-position">
-
-                                    <span class="thumbs t4">
-                                    </span>
-
-                                    <span class="">
-                                        <span><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="4"></span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="col">
-                                <label id="{{this.Code}}5" class="step-box-contenttext-center relative-position">
-
-                                    <span class="thumbs t5">
-                                    </span>
-
-                                    <span class="">
-                                        <span><input class="asd" type="radio" name="question_{{this.Code}}"
-                                                value="5"></span>
-                                    </span>
-                                </label>
-                            </div>
-                            {{/if}}
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.inner -->
-        {{#if this.Last}}
-        <div class="actions">
-            <ul>
-                <li>
-                    <span class="js-btn-prev" title="BACK"><i class="fa fa-arrow-left"></i> Atras
-                    </span>
-                </li>
-                <li>
-                    <button class="js-btn-next" type="submit" title="submit">
-                        Enviar <i class="fa fa-arrow-right"></i>
-                    </button>
-                </li>
-            </ul>
-        </div>
-        {{else}}
-        <div class="actions">
-            <ul>
-                <li>
-                    <span class="js-btn-prev" title="BACK"><i class="js-btn-prev fa fa-arrow-left"></i>
-                        Atras
-                    </span>
-                </li>
-                <li>
-                    <span class="js-btn-next" title="NEXT">Siguiente <i class="fa fa-arrow-right"></i></span>
-                </li>
-            </ul>
-        </div>
-        {{/if}}
-    </div>
-</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.inner -->
+			{{#if this.Last}}
+				<div class='actions'>
+					<ul>
+						<li>
+							<span class='js-btn-prev' title='Atrás'><i class='fa fa-arrow-left'></i>
+								Atras
+							</span>
+						</li>
+						<li>
+							<button class='js-btn-next' type='submit' title='Enviar'>
+								Enviar
+								<i class='fa fa-arrow-right'></i>
+							</button>
+						</li>
+					</ul>
+				</div>
+			{{else}}
+				<div class='actions'>
+					<ul>
+						<li>
+							<span class='js-btn-prev' title='Atrás'><i class='js-btn-prev fa fa-arrow-left'></i>
+								Atras
+							</span>
+						</li>
+						<li>
+							<span class='js-btn-next' title='Siguiente'>Siguiente <i class='fa fa-arrow-right'></i></span>
+						</li>
+					</ul>
+				</div>
+			{{/if}}
+		</div>
+	</div>
 {{/each}}

@@ -5,38 +5,9 @@
                 <div class="col-12">
                     <h4><a href="https://brujulaconstituyente.cl">brujulaconstituyente.cl</a> </h4>
                     <br>
-                    <h3><span class="text-danger">{{#if resultado.name}}{{resultado.name}}{{/if}}</span> Acabas de poner
-                        a prueba a <span class="text-danger">{{resultado.informacion.N_Candidatos}}</span> candidatos
-                        del
-                        distrito <span class="text-danger">{{resultado.informacion.Distrito}}</span>
-                    </h3>
+                    <h3><span class="text-danger">{{#if resultado.name}}{{resultado.name}}{{/if}}</h3>
                     <br>
-                    <h3 class="text-uppercase">Resultados:</h3>
-                    <br>
-                    <div class="row">
-                        <div class="col-12 text-right">
-
-                            <div class="row">
-                                <div class="col">DISTRITO:</div>
-                                <div class="col text-right">{{resultado.informacion.Distrito}}</div>
-                            </div>
-                            <div class="row">
-                                <div class="col">HABITANTES:</div>
-                                <div class="col text-right">{{resultado.informacion.Poblacion_del_distrito}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">CANDIDATOS:</div>
-                                <div class="col text-right">{{resultado.informacion.N_Candidatos}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">CUPOS:</div>
-                                <div class="col text-right">{{resultado.informacion.Cupos}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 class="text-uppercase">Tus resultados son:</h3>
                 </div>
             </div>
             <br>
@@ -45,121 +16,77 @@
                 {{resultado.coherencia}}
             </div>
             {{/if}}
-            <h3 class="text-uppercase">Los más cercanos</h3>
             <br>
             {{#each resultado.mejoresCandidatos}}
             <div class="row">
-                <div class="row">
-                    <div class="col-sm-12">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="./assets/img/candidates/{{this.Codigo_candidato}}.png"
+                        style="height: 350px;" alt="Card image cap">
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.Nombre1}}</h5>
+                        <p class="card-text">
                         <div class="row border">
-                            <div class="col-sm-12 h6">
-                                <strong>{{this.Nombre1}} {{this.Nombre2}} {{this.Apellido1}} {{this.Apellido2}}</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-9">
-                        <div class="row border">
-                            <div class="col-sm-3 col-md-2">
-                                Numero:
+                            <div class="col-sm-3 col-md-4">
+                                Partido:
                             </div>
                             <div class="col-sm-9 h6">
-                                <strong>{{this.Codigo_candidato}}</strong>
+                                <strong>{{this.Partido}}</strong>
                             </div>
                         </div>
                         <div class="row border">
-                            <div class="col-sm-3 col-md-2">
-                                Lista:
+                            <div class="col-sm-3 col-md-4">
+                                Pacto:
                             </div>
                             <div class="col-sm-9 h6">
                                 <strong>{{this.Lista}}</strong>
                             </div>
                         </div>
                         <div class="row border">
-                            <div class="col-sm-3 col-md-2">
-                                Web:
+                            <div class="col-sm-3 col-md-4">
+                                RRSS:
                             </div>
-                            <div class="col-sm-9">
-                                <a class="" href="{{this.Web}}" target="_blank">{{this.Web}}</a>
+                            <div class="col-sm-9 h6">
+                                    <ul class="d-inline-flex">
+                                        <li class="nav-item">
+                                            <ul class="list-inline-mb-0">
+                                                {{#if this.Web}}
+                                                <li class="list-inline-item"><a href="{{this.Web}}" target="_blank"><img src="./assets/img/rrss/web.png" alt=""></a></li>
+                                                {{/if}}           
+                                                <li class="list-inline-item"><a href="{{this.GrandesAportes}}" target="_blank"><img src="./assets/img/rrss/twitter.png" alt=""></a></li>
+                                                <li class="list-inline-item"><a href="{{this.NAportantes}}" target="_blank"><img src="./assets/img/rrss/instagram.png" alt=""></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                            </div>
+                        </div> 
+                        
+                        <div class="row border">
+                            
+                            
+                            <div class="col-sm-12 col-md-12" style="background-color: #{{changeColor this.Porcentaje_Cercania}}; color: #fff ;
+                                    font-size: 34px; text-align: center;">
+                                {{this.Porcentaje_Cercania}}%
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-12 col-md-3" style="background-color: #61b329; color: #fff ;
-                                    font-size: 50px; text-align: center;">
-                        {{this.Porcentaje_Cercania}}
+
+                        </p>
                     </div>
                 </div>
             </div>
             <br>
             {{/each}}
-
-            <hr class=" compass">
-            <h3 class="text-uppercase">El más distante</h3>
-            <br>
-            <div class="row">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="row border">
-                            <div class="col-sm-12 h6">
-                                <strong>{{resultado.peorCandidato.Nombre1}} {{resultado.peorCandidato.Nombre2}}
-                                    {{resultado.peorCandidato.Apellido1}} {{resultado.peorCandidato.Apellido2}}</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-9">
-                        <div class="row border">
-                            <div class="col-sm-3 col-md-2">
-                                Numero:
-                            </div>
-                            <div class="col-sm-9 h6">
-                                <strong>{{resultado.peorCandidato.Codigo_candidato}}</strong>
-                            </div>
-                        </div>
-                        <div class="row border">
-                            <div class="col-sm-3 col-md-2">
-                                Lista:
-                            </div>
-                            <div class="col-sm-9 h6">
-                                <strong>{{resultado.peorCandidato.Lista}}</strong>
-                            </div>
-                        </div>
-                        <div class="row border">
-                            <div class="col-sm-3 col-md-2">
-                                Web:
-                            </div>
-                            <div class="col-sm-9">
-                                <a class="" href="{{resultado.peorCandidato.Web}}"
-                                    target="_blank">{{resultado.peorCandidato.Web}}</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-3" style="background-color: red; color: #fff ;
-                                    font-size: 50px; text-align: center;">
-                        {{resultado.peorCandidato.Porcentaje_Cercania}}
-                    </div>
-                </div>
-            </div>
-            <div class="d-sm-none d-md-block">
-                <br><br>
-            </div>
         </div>
         <div class="col-sm-6 col-md-6 h4">
             <h1>Sigue informandote!</h1>
             <br>
             <ul>
-                <li>Conoce a los candidatos:</li>
-                <li><a href="https://quienesson.cl/distrito-{{resultado.informacion.Distrito}}"
-                        target="_blank">https://quienesson.cl/</a></li>
+                <li>Web Servel Primarias (fechas, programas,etc):</li>
+                <li><a href="https://presidenciales2021.servel.cl/"
+                        target="_blank">https://presidenciales2021.servel.cl/</a></li>
                 <br>
-                <li>El Proceso:</li>
-                <li><a href="https://plataformacontexto.cl/" target="_blank">https://plataformacontexto.cl/</a></li>
-                <br>
-                <li>Participa:</li>
-                <li><a href="https://ahoranostocaparticipar.cl/" target="_blank">https://ahoranostocaparticipar.cl/</a>
-                </li>
+                <li>Busca tu mesa y si eres vocal en:</li>
+                <li><a href="https://consulta.servel.cl/" target="_blank">https://consulta.servel.cl/</a></li>
                 <br>
                 <li>
                     <a href="/"><button type="button" class="btn btn-lg btn-success">Volver a participar</button></a>

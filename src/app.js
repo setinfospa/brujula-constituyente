@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
+const hbss = require('hbs');
 const hbs = require('express-handlebars');
 const path = require('path');
 
@@ -9,6 +10,7 @@ const functions = require('./helpers/functions');
 // Initialization
 const app = express();
 functions.CargaBD();
+
 
 // Settings
 app.set('port', process.env.PORT || 3000);

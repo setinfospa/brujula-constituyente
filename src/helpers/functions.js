@@ -22,7 +22,7 @@ var Pobl; //poblacion del distrito
 var MaxDisC = 0; //Distancia al candidato mas lejano
 var pMaxDis = 0; //Puntero al candidato mas lejano
 
-const N_Candidatos = 1279; //Numero de Candidatos totales
+const N_Candidatos = 20; //Numero de Candidatos totales
 //-----------------------------------------------------------------------------------------------------------------------------------------
 function CargaBD() {
 	leeArchivo(path.join(__dirname, '../database/Comunas.csv')).then((algo) => {
@@ -42,14 +42,27 @@ exports.CargaBD = CargaBD;
 function ProcesaRespuestas(Respuestas) {
 	return new Promise(function (resolve, reject) {
 		//leeArchivo(Respuestas).then( Arr_Lineas=> {
-		console.log(Respuestas.length);
+		console.log("Respuestas.length "+Respuestas.length);
+		console.log(Respuestas)
+		for (let index = 0; index < 7; index++) {
+			let string = '';
+			Respuestas.splice(26, 0, string);
+		}
+		var lengPreguntas=Arr_Preguntas.length-1
+		var lengRespuestas=Respuestas.length
 		if (Respuestas.length > 0) {
 			name = Respuestas[0];
+			for (let index = 0; index < (lengPreguntas-lengRespuestas); index++) {
+				let string = '';
+				Respuestas.push(string);
+			}
 			Arr_Resultado = new Array();
-			Arr_Respuestas = new Array(Arr_Preguntas.length - 1);
-			CP_Array(Respuestas, Arr_Respuestas);
-			Arr_Respuestas[Arr_Respuestas.length - 2] = 1;
-			Arr_Respuestas[Arr_Respuestas.length - 1] = 5;
+			Arr_Respuestas = new Array();
+			Arr_Respuestas=Respuestas.slice(0,lengPreguntas) //limita respuestas recibidas a el largo de las preguntas
+			//Arr_Respuestas[Arr_Respuestas.length - 2] = 1;
+			//Arr_Respuestas[Arr_Respuestas.length - 1] = 5;
+			console.log("ArrayPreguntas.leng "+(lengPreguntas) +" Array Respuestas")
+			console.log(Arr_Respuestas)
 			RecomiendaCandidato().then((Respuesta) => resolve(Respuesta));
 		} else {
 			reject(error);
@@ -155,7 +168,9 @@ function BuscaDistrito() {
 	return new Promise(function (resolve, reject) {
 		try {
 			Comuna = Arr_Respuestas[1];
-			for (var cFil = 2; cFil < 347; cFil++) {
+			console.log(Arr_Respuestas[1]);
+			Comuna="Bulnes" //Fuerzo distrito 19
+			for (var cFil = 2; cFil < 346; cFil++) {
 				if (Comuna == Arr_Comunas[cFil][2]) {
 					Distr = Arr_Comunas[cFil][4]; //distrito del encuestado
 					NCand = Arr_Comunas[cFil][6]; //numero de candidatos del distrito
@@ -219,12 +234,14 @@ function CalculaDistanciaLista(filp) {
 				if (Arr_Respuestas[cFilR + 1].length == 0) {
 					//Caso Respesta es valida
 					NotaR = 99; //caso casilla vacía
+					//console.log("Casilla vacia "+cFilR)
 				} else {
 					NotaR = Arr_Respuestas[cFilR + 1]; //caso casilla buena
 				}
 				Ponde = Arr_Preguntas[cFilR][5]; //lee ponderacion de  las pregunta
 				NotaC = Arr_Candidatos[filp][cFilR + FilToCol]; //lee nota individual del candidato
 			}
+			//console.log("Ponde: "+ Ponde + " NotaC : " + NotaC);
 			Dis = Dis + Math.pow(Ponde * (NotaR - NotaC), 2); //suma distancia parcial
 		}
 
@@ -242,6 +259,7 @@ function RecorreCandidatos() {
 	var cFilW = 0; //contador fila Write
 	var DisL; //distancia a la lista
 	var DisC; //distancia al candidato
+	var DisT; //suma de Distancia de lista y Candidato
 
 	try {
 		MaxDisC = 0;
@@ -252,8 +270,11 @@ function RecorreCandidatos() {
 				continue;
 			} // solo los candidatos del distrito
 			DisL = CalculaDistanciaLista(cFilC); //calcula distancia con lista
+			//console.log("Distancia Lista :"+DisL)
 			DisC = CalculaDistanciaCandidato(cFilC);
-
+			//console.log("Distancia Candidato :"+DisC)
+			DisT = DisL + DisC;
+			console.log(Arr_Candidatos[cFilC][4]+" DistanciaLista: " + DisL);
 			if (DisL < 100) {
 				Arr_Resultado.push([
 					Arr_Candidatos[cFilC][4], //nom1
@@ -266,6 +287,7 @@ function RecorreCandidatos() {
 					Arr_Candidatos[cFilC][0], //Code Candidato
 					DisL,                     //Distancia Lista
 					DisC,					  //Distancia Candidato
+					PorcentajeCercania(DisL, DisC),
 				]);
 				cFilW++;
 			}
@@ -283,6 +305,8 @@ function RecomiendaCandidato() {
 	var DCerca = new Array(5); //Distancia de los mas cercanos
 	var MaxFil; //fila maxima
 	var objeSalida = new Object();
+	var cFilC; //contador candidatos
+	var AuxSalida = " ";
 	var Arr_Res_Peor = new Array();
 	var Arr_Cand_Salida = new Array();
 	return new Promise(function (resolve, reject) {
@@ -298,18 +322,18 @@ function RecomiendaCandidato() {
 				console.log('RecorreCandidatos Res: ' + res);
 				if (res > 0) {
 					console.log('Ordenando Segun Notas');
-					//Ordena segun Notas*********************************************************************
+					//Ordena segun suma de  DistL y DistC *********************************************************************
 					MaxFil = res - 1; //ultima fila escrita
 					Arr_Resultado = Arr_Resultado.sort(function comparar(a, b) {
-						return a[9] - b[9];
+						return b[10] - a[10];
 					});
-					Arr_Resultado = Arr_Resultado.sort(function comparar(a, b) {
-						return a[8] - b[8];
-					});
+					//Arr_Resultado = Arr_Resultado.sort(function comparar(a, b) {
+					//	return a[8] - b[8];
+					//});
 					//Ordena La escritura del archivo de Salida
 					//Datos de comunas *****************************************************
-					Arr_Res_Peor.push(Arr_Resultado[Arr_Resultado.length - 1]); //Ultimo elemento guardado como el peor
-					Arr_Resultado.pop(); //Elimina ultimo elemento
+					//Arr_Res_Peor.push(Arr_Resultado[Arr_Resultado.length - 1]); //Ultimo elemento guardado como el peor
+					//Arr_Resultado.pop(); //Elimina ultimo elemento
 					objeSalida.name = name;
 					objeSalida.informacion = { N_Candidatos: NCand, Cupos: NCons, Poblacion_del_distrito: Pobl, Distrito: Distr };
 					if (Arr_Resultado[0][8] + Arr_Resultado[0][9] > 18) {
@@ -317,8 +341,31 @@ function RecomiendaCandidato() {
 					} else {
 						objeSalida.coherencia = null;
 					}
+					if (Arr_Resultado[0][10]  > 76) {
+						objeSalida.coherencia = 'TIENES AFINIDAD CON EL PACTO : '+Arr_Resultado[0][4];
+					} else {
+						objeSalida.coherencia = null;
+					}
 					//resultados Mejores Candidatos**********************************************************
-					objeSalida.mejoresCandidatos = [
+					console.log(Arr_Resultado.length)
+					AuxSalida="["
+					for (cFilC = 0; cFilC <Arr_Resultado.length; cFilC++) {
+						AuxSalida= AuxSalida + '{"Nombre1":'  			+'"' +Arr_Resultado[cFilC][0]+ '",'+
+												'"AporteServel":' 		+'"' + Arr_Resultado[cFilC][1]+ '",'+
+												'"NAportantes":'		+'"' + Arr_Resultado[cFilC][2]+ '",'+
+												'"GrandesAportes":'		+'"' + Arr_Resultado[cFilC][3]+ '",'+
+												'"Lista":'				+'"' + Arr_Resultado[cFilC][4]+ '",'+
+												'"Partido":'			+'"' + Arr_Resultado[cFilC][5]+ '",'+
+												'"Web":'				+'"' + Arr_Resultado[cFilC][6]+ '",'+
+												'"Codigo_candidato":'	+'"' + Arr_Resultado[cFilC][7]+ '",'+
+												'"Porcentaje_Cercania":'+'"' + Arr_Resultado[cFilC][10]+ '"'+
+												'},'
+					}
+					AuxSalida=AuxSalida.substring(0,AuxSalida.length -1);
+					AuxSalida=AuxSalida +"]"
+					//console.log(AuxSalida)
+					objeSalida.mejoresCandidatos = JSON.parse(AuxSalida)
+					/*objeSalida.mejoresCandidatos = [
 						{
 							Nombre1: Arr_Resultado[0][0],
 							Nombre2: Arr_Resultado[0][1],
@@ -353,22 +400,12 @@ function RecomiendaCandidato() {
 							Porcentaje_Cercania: PorcentajeCercania(Arr_Resultado[2][8], Arr_Resultado[2][9]),
 						},
 					];
-					//Peor Candidato**********************************************************************************
-
-					objeSalida.peorCandidato = {
-						Nombre1: Arr_Res_Peor[0][0],
-						Nombre2: Arr_Res_Peor[0][1],
-						Apellido1: Arr_Res_Peor[0][2],
-						Apellido2: Arr_Res_Peor[0][3],
-						Lista: Arr_Res_Peor[0][4],
-						Partido: Arr_Res_Peor[0][5],
-						Web: Arr_Res_Peor[0][6],
-						Codigo_candidato: Arr_Res_Peor[0][7],
-						Porcentaje_Cercania: PorcentajeCercania(Arr_Res_Peor[0][8], Arr_Res_Peor[0][9]),
-					};
-					//guarda Peor****************************************************************************
-					//console.log(Arr_Salida)
-					Arr_Cand_Salida.push(Arr_Respuestas[0],Arr_Resultado[0][7],Arr_Resultado[1][7],Arr_Resultado[2][7])
+					*/
+					console.log(objeSalida)
+					Arr_Cand_Salida.push(Arr_Respuestas[0])
+					for (cFilC = 0; cFilC < Arr_Resultado.length; cFilC++) {
+						Arr_Cand_Salida.push(Arr_Resultado[cFilC][7])
+					}
 					EscribeArchivo(path.join(__dirname, '../database/Resul.csv'), Arr_Cand_Salida);
 					resolve(objeSalida);
 				}
@@ -386,7 +423,7 @@ function GetResultado() {
 }
 exports.GetResultado = GetResultado;
 function PorcentajeCercania(DistL, DistC) {
-	return (-2.56 * (DistL + DistC) + 112).toFixed(1) + '%';
+	return (-2.80 * (DistL + DistC) + 102).toFixed(1) ;
 }
 exports.PorcentajeCercania = PorcentajeCercania;
 function EncDecData(szData){

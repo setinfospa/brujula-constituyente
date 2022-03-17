@@ -902,7 +902,8 @@ select.form-control option[value=''][disabled] {
 	color: #959595;
 	font-size: 17px;
 	position: relative;
-	padding-left: 80px;
+	padding-left: 10px;
+	padding-right: 10px;
 	border-radius: 4px;
 	margin-bottom: 20px;
 	cursor: pointer;
@@ -916,7 +917,7 @@ select.form-control option[value=''][disabled] {
 	margin-bottom: 0;
 	padding: 18px 0;
 }
-.services-select-option li:after {
+/* .services-select-option li:after {
 	content: '';
 	width: 23px;
 	height: 23px;
@@ -925,8 +926,8 @@ select.form-control option[value=''][disabled] {
 	top: 20px;
 	border-radius: 100%;
 	border: 2px solid #ededed;
-}
-.services-select-option li:before {
+} */
+/* .services-select-option li:before {
 	content: '';
 	top: 26px;
 	left: 41px;
@@ -937,7 +938,7 @@ select.form-control option[value=''][disabled] {
 	color: #6b59d3;
 	font-family: 'Font Awesome 5 Free';
 	position: absolute;
-}
+} */
 .services-select-option li.active {
 	border: 2px solid #6b59d3;
 }
