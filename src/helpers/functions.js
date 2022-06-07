@@ -43,21 +43,21 @@ function ProcesaRespuestas(Respuestas) {
 	return new Promise(function (resolve, reject) {
 		//leeArchivo(Respuestas).then( Arr_Lineas=> {
 		console.log("Respuestas.length "+Respuestas.length);
-		for (let index = 0; index < 7; index++) {
-			let string = '';
-			Respuestas.splice(26, 0, string);
+		for (let index = 0; index < 6; index++) {
+			let string = '3';
+			Respuestas.splice(16, 0, string);
 		}
+
 		var lengPreguntas=Arr_Preguntas.length-1
 		var lengRespuestas=Respuestas.length
 		if (Respuestas.length > 0) {
 			name = Respuestas[0];
-			for (let index = 0; index < (lengPreguntas-lengRespuestas); index++) {
-				let string = '';
-				Respuestas.push(string);
-			}
+
 			Arr_Resultado = new Array();
 			Arr_Respuestas = new Array();
 			Arr_Respuestas=Respuestas.slice(0,lengPreguntas) //limita respuestas recibidas a el largo de las preguntas
+			Arr_Respuestas.push('3');
+			Arr_Respuestas.push('3');
 			//Arr_Respuestas[Arr_Respuestas.length - 2] = 1;
 			//Arr_Respuestas[Arr_Respuestas.length - 1] = 5;
 			console.log("ArrayPreguntas.leng "+(lengPreguntas) +" Array Respuestas")
@@ -420,7 +420,7 @@ function GetResultado() {
 }
 exports.GetResultado = GetResultado;
 function PorcentajeCercania(DistL, DistC) {
-	return (-3.2 * (DistL + DistC) + 104).toFixed(1) ;
+	return (-4.5 * (DistL + DistC) + 122).toFixed(1) ;
 }
 exports.PorcentajeCercania = PorcentajeCercania;
 function EncDecData(szData){

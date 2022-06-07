@@ -6,7 +6,7 @@
 					<div class='step-inner-content'>
 						<span class='step-no bottom-line'>{{this.Tema}}</span>
 						<div class='step-progress float-end'>
-							<span>{{this.Code}} de 23</span>
+							<span>{{this.Code}} de 37</span>
 							<div class='step-progress-bar'>
 								<div class='progress'>
 									<div class='progress-bar' style='width: {{this.ProgressBar}}%'>
@@ -26,16 +26,18 @@
 									<div class='col'>
 										<div class='services-select-option'>
 											<ul>
-												<li class='bg-white asdd'><label>Se debe privilegiar la educación pública y de calidad para
-														todos como un derecho y financiada a través de impuestos.
-														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
-												<li class='bg-white asdd'><label>Privilegiar que cada familia elija según sus posibilidades
-														económicas e intereses. (Manteniendo una educación para ricos y otra para pobres.)
+												<li class='bg-white asdd'><label>Es un
+														<b>estado subsidiario</b>. (el estado sólo se hace cargo de aquellas funciones que los
+														privados no pueden realizar.)
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='2' /></label></li>
+												<li class='bg-white asdd'><label><b>Es un estado social y democrático de derecho</b>. (Consagra
+														derechos y es responsabilidad del Estado la provisión de ellos.)
+
 														<input
 															class='asd'
 															type='radio'
 															name='question_{{this.Code}}'
-															value='2'
+															value='4'
 															required
 														/></label></li>
 											</ul>
@@ -45,7 +47,10 @@
 									<div class='col'>
 										<div class='services-select-option'>
 											<ul>
-												<li class='bg-white asdd'><label>Permitir que los liceos/colegios seleccionen a los alumnos.
+												<li class='bg-white asdd'><label>Crear un
+														<b>Sistema Nacional de educación</b>
+														de calidad, universal y gratuito, como un derecho para todos. (busca lograr que todos los
+														chilenos tengan una educación similar).
 														<input
 															class='asd'
 															type='radio'
@@ -53,17 +58,166 @@
 															value='2'
 															required
 														/></label></li>
-												<li class='bg-white asdd'><label>Dar igual posibilidad de acceso a cualquier alumno.
+												<li class='bg-white asdd'><label>Privilegiar que cada familia elija según sus posibilidades
+														económicas e intereses. Facilita la creación establecimientos privados sin mayores
+														requerimientos. (La educación es muy segregada y desigual de acuerdo a los ingresos).
 														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
 											</ul>
 										</div>
 									</div>
-								{{else if this._11}}
+								{{else if this._3}}
 									<div class='col'>
 										<div class='services-select-option'>
 											<ul>
-												<li class='bg-white asdd'><label>Mantener el actual sistema de ahorro individual (AFP) y mejorar
-														las pensiones postergando la edad de jubilación.
+												<li class='bg-white asdd'><label>Existe el derecho a la propiedad y nadie puede ser privado de
+														sus bienes, salvo en casos específicos de interés general.
+														<input
+															class='asd'
+															type='radio'
+															name='question_{{this.Code}}'
+															value='2'
+															required
+														/></label></li>
+												<li class='bg-white asdd'><label>Existe el derecho de propiedad, excepto los bienes comunes y
+														los que la constitución declare inapropiables, tal como el aire y el agua.
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
+											</ul>
+										</div>
+									</div>
+								{{else if this._4}}
+									<div class='col'>
+										<div class='services-select-option'>
+											<ul>
+												<li class='bg-white asdd'><label>El Estado ejecutará acciones de salud ya sea por la vía publica
+														o privada, con derecho a elegir el sistema de salud. Situación actual que genera dos sistema
+														uno con mayor presencia de ricos, jóvenes y sanos y otro con mayor presencia de pobres
+														viejos, enfermos.
+														<input
+															class='asd'
+															type='radio'
+															name='question_{{this.Code}}'
+															value='2'
+															required
+														/></label></li>
+												<li class='bg-white asdd'><label>El Sistema Nacional de Salud será de carácter universal,
+														publico e integrado y corresponderá al estado su rectoría. Los seguros privados pasarían a
+														ser voluntarios y complementarios al sistema nacional.
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
+											</ul>
+										</div>
+									</div>
+								{{else if this._5}}
+									<div class='col'>
+										<div class='services-select-option'>
+											<ul>
+												<li class='bg-white asdd'><label>Se reconoce el trabajo doméstico, la libertad de emprender, y
+														prohíbe el trabajo forzado como también la trata de personas. Derecho a la sindicalización y
+														a participar de las decisiones de la empresa.
+														<input
+															class='asd'
+															type='radio'
+															name='question_{{this.Code}}'
+															value='2'
+															required
+														/></label></li>
+												<li class='bg-white asdd'><label>Existe libertad de elección, contratación y el derecho a una
+														remuneración Justa. Por su parte, prohíbe la discriminación y también la huelga de los
+														funcionarios públicos.
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
+											</ul>
+										</div>
+									</div>
+								{{else if this._6}}
+									<div class='col'>
+										<div class='services-select-option'>
+											<ul>
+												<li class='bg-white asdd'><label>La naturaleza tiene derecho a que se proteja su existencia. El
+														Estado y la sociedad tienen el deber de protegerlos y respetarlos. El Estado debe ser
+														ecológicamente responsable y promover la educación ambiental y científica. Son deberes del
+														estado Adoptar medidas frente a la Crisis climática y ecológica, la reducción y valorización
+														de residuos, proteger la biodiversidad, preservar, conservar y restaurar. La naturaleza
+														tiene derecho a que se proteja su existencia.
+														<input
+															class='asd'
+															type='radio'
+															name='question_{{this.Code}}'
+															value='2'
+															required
+														/></label></li>
+												<li class='bg-white asdd'><label>Las personas tienen el derecho a vivir en un medio ambiente
+														libre de contaminación. Es deber del Estado velar para que este derecho no sea afectado y
+														tutelar la preservación de la naturaleza. La ley podrá establecer restricciones específicas
+														al ejercicio de determinados derechos o libertades para proteger el medio ambiente.
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
+											</ul>
+										</div>
+									</div>
+								{{else if this._7}}
+									<div class='col'>
+										<div class='services-select-option'>
+											<ul>
+												<li class='bg-white asdd'><label>La ley en ningún caso podrá establecer monopolio estatal sobre
+														los medios de comunicación social.
+														<input
+															class='asd'
+															type='radio'
+															name='question_{{this.Code}}'
+															value='2'
+															required
+														/></label></li>
+												<li class='bg-white asdd'><label>El Estado impedirá la concentración de la propiedad de los
+														medios de comunicación e información. En ningún caso se podrá establecer el monopolio
+														estatal sobre ellos. Corresponderá a la ley el resguardo de este precepto. El Estado fomenta
+														la creación de medios de comunicación e información y su desarrollo a nivel regional, local
+														y comunitario.
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
+											</ul>
+										</div>
+									</div>
+								{{else if this._8}}
+									<div class='col'>
+										<div class='services-select-option'>
+											<ul>
+												<li class='bg-white asdd'><label>Ejercer una función publica obliga a la persona a cumplir con
+														el principio de probidad en sus actuaciones.
+														<input
+															class='asd'
+															type='radio'
+															name='question_{{this.Code}}'
+															value='2'
+															required
+														/></label></li>
+												<li class='bg-white asdd'><label>La función publica se rige por la probidad, que implica una
+														conducta intachable, desempeño honesto y una preeminencia del interés general sobre el
+														particular.
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
+											</ul>
+										</div>
+									</div>
+								{{else if this._9}}
+									<div class='col'>
+										<div class='services-select-option'>
+											<ul>
+												<li class='bg-white asdd'><label>El agua, como bien común natural, es inapropiable. El estado
+														debe preservar conservar y restaurar los bienes comunes naturales.
+														<input
+															class='asd'
+															type='radio'
+															name='question_{{this.Code}}'
+															value='2'
+															required
+														/></label></li>
+												<li class='bg-white asdd'><label>Los derechos de los particulares sobre las aguas, reconocidos o
+														constituidos en conformidad a la ley, otorgarán a sus titulares la propiedad sobre ellos.
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
+											</ul>
+										</div>
+									</div>
+								{{else if this._10}}
+									<div class='col'>
+										<div class='services-select-option'>
+											<ul>
+												<li class='bg-white asdd'><label>Mantener el actual sistema de seguros privados (AFP).
 														<input
 															class='asd'
 															type='radio'
@@ -77,11 +231,12 @@
 											</ul>
 										</div>
 									</div>
-								{{else if this._17}}
+								{{else if this._11}}
 									<div class='col'>
 										<div class='services-select-option'>
 											<ul>
-												<li class='bg-white asdd'><label>Carabineros lo ha hecho muy bien, se debe mantener la institución como está y continuar en la misma línea.
+												<li class='bg-white asdd'><label>El Estado de Chile es unitario. La soberanía reside
+														esencialmente en la Nación.
 														<input
 															class='asd'
 															type='radio'
@@ -89,24 +244,19 @@
 															value='2'
 															required
 														/></label></li>
-												<li class='bg-white asdd'><label>Es necesario refundar la institución creando una nueva policía que asegure el control civil, resguardo de los derechos humanos,  y rendimiento de cuentas al país.
-														comunal.
-														<input
-															class='asd'
-															type='radio'
-															name='question_{{this.Code}}'
-															value='4'
-															required
-														/></label></li>
+												<li class='bg-white asdd'><label>Chile es un Estado Plurinacional e Intercultural que reconoce
+														la coexistencia de diversas naciones y pueblos en el marco de la unidad del Estado.
+														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
 											</ul>
 										</div>
 									</div>
-								{{else if this._19}}
+								{{else if this._12}}
 									<div class='col'>
 										<div class='services-select-option'>
 											<ul>
-												<li class='bg-white asdd'><label>Es necesario que se realicen reformas al sistema público, para
-														mejorar la atención sin embargo no se debe afectar al sistema privado.
+												<li class='bg-white asdd'><label>Establece garantías de poder gozar la vida sin que esta llegue
+														a fin por orden de una institución estatal y consagra el respeto a la integridad de cada
+														persona.
 														<input
 															class='asd'
 															type='radio'
@@ -114,37 +264,18 @@
 															value='2'
 															required
 														/></label></li>
-												<li class='bg-white asdd'><label>Debe convertirse en un único sistema de salud universal de
-														calidad para todos. Dejando los seguros privados como adicionales y voluntarios.
+												<li class='bg-white asdd'><label>Derecho a la vida y a la integridad física y psíquica, además
+														la ley protege la vida del que esta por nacer, y puede restituir penas de muerte en caso de
+														que una ley lo defina.
 														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
 											</ul>
 										</div>
 									</div>
-								{{else if this._23}}
+								{{else if this._13}}
 									<div class='col'>
 										<div class='services-select-option'>
 											<ul>
-												<li class='bg-white asdd'><label>Prohibirse bajo cualquier causal.
-														<input
-															class='asd'
-															type='radio'
-															name='question_{{this.Code}}'
-															value='1'
-															required
-														/></label></li>
-												<li class='bg-white asdd'><label>Permitirse sólo en tres causales (riesgo vital madre,
-														inviabilidad del feto o violación).
-														<input class='asd' type='radio' name='question_{{this.Code}}' value='2' /></label></li>
-												<li class='bg-white asdd'><label>Permitirse hasta las 14 semanas.
-														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
-											</ul>
-										</div>
-									</div>
-								{{else if this._25}}
-									<div class='col'>
-										<div class='services-select-option'>
-											<ul>
-												<li class='bg-white asdd'><label>Rechazo
+												<li class='bg-white asdd'><label>Posibilidad presentar petición, o reclamación.
 														<input
 															class='asd'
 															type='radio'
@@ -152,16 +283,17 @@
 															value='2'
 															required
 														/></label></li>
-												<li class='bg-white asdd'><label>Apruebo
+												<li class='bg-white asdd'><label>Derecho a presentar petición, o reclamación, lo cual exigirá
+														una respuesta del estado.
 														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
 											</ul>
 										</div>
 									</div>
-								{{else if this._26}}
+								{{else if this._14}}
 									<div class='col'>
 										<div class='services-select-option'>
 											<ul>
-												<li class='bg-white asdd'><label>Mixta (50% Parlamentarios)
+												<li class='bg-white asdd'><label>Permitir el aborto, de acuerdo a la ley.
 														<input
 															class='asd'
 															type='radio'
@@ -169,63 +301,13 @@
 															value='2'
 															required
 														/></label></li>
-												<li class='bg-white asdd'><label>Constitucional (100% Elegidos)
-														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
-											</ul>
-										</div>
-									</div>
-								{{else if this._27}}
-									<div class='col'>
-										<div class='services-select-option'>
-											<ul>
-												<li class='bg-white asdd'><label>Estuve de acuerdo
-														<input
-															class='asd'
-															type='radio'
-															name='question_{{this.Code}}'
-															value='4'
-															required
-														/></label></li>
-												<li class='bg-white asdd'><label>Estuve en desacuerdo
-														<input class='asd' type='radio' name='question_{{this.Code}}' value='2' /></label></li>
-											</ul>
-										</div>
-									</div>
-								{{else if this._28}}
-									<div class='col'>
-										<div class='services-select-option'>
-											<ul>
-												<li class='bg-white asdd'><label>Indiferente
-														<input
-															class='asd'
-															type='radio'
-															name='question_{{this.Code}}'
-															value='3'
-															required
-														/></label></li>
-												<li class='bg-white asdd'><label>Que no reciban grandes aportes
+												<li class='bg-white asdd'><label>Debe penalizar el aborto salvo en tres causales (riesgo vital
+														madre, inviabilidad del feto o violación).
 														<input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></label></li>
 											</ul>
 										</div>
 									</div>
 								{{else}}
-									<div class='col'>
-										<label id='{{this.Code}}1' class='step-box-content text-center relative-position'>
-
-											<span class='thumbs t1'>
-											</span>
-
-											<span class=''>
-												<span class=''><input
-														class='asd'
-														type='radio'
-														name='question_{{this.Code}}'
-														value='1'
-														required
-													/></span>
-											</span>
-										</label>
-									</div>
 									<div class='col'>
 										<label id='{{this.Code}}2' class='step-box-content text-center relative-position'>
 
@@ -256,17 +338,6 @@
 
 											<span class=''>
 												<span><input class='asd' type='radio' name='question_{{this.Code}}' value='4' /></span>
-											</span>
-										</label>
-									</div>
-									<div class='col'>
-										<label id='{{this.Code}}5' class='step-box-contenttext-center relative-position'>
-
-											<span class='thumbs t5'>
-											</span>
-
-											<span class=''>
-												<span><input class='asd' type='radio' name='question_{{this.Code}}' value='5' /></span>
 											</span>
 										</label>
 									</div>
