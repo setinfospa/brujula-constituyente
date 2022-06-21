@@ -11,76 +11,69 @@
                 </div>
             </div>
             <br>
-{{!--             {{#if resultado.coherencia}}
+            {{!-- {{#if resultado.coherencia}}
             <div class="alert alert-danger" role="alert">
                 {{resultado.coherencia}}
             </div>
             {{/if}} --}}
             <br>
-            {{#each resultado.mejoresCandidatos}}
+            <div class="row border" style="width: 18rem;">
+                <div class="col-sm-12 col-md-12" style="background-color: #{{changeColor resultado.mejoresCandidatos.0.Porcentaje_Cercania}}; color: #fff ;
+                                    font-size: 34px; text-align: center;">
+                    {{resultado.mejoresCandidatos.0.Porcentaje_Cercania}}%
+                </div>
+            </div>
+            <div class="row border" style="width: 18rem;">
+                <div class="col-sm-12 h6">
+                    <center><strong style="font-size: 40px;"> <img src="http://localhost:3000/assets/img/GenderTestagree2.png">{{resultado.mejoresCandidatos.0.Nombre1}}</strong></center>
+                </div>
+            </div>
             <div class="row">
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top pt-3" src="./assets/img/plebiscito/{{this.Codigo_candidato}}.png"
+                    <img class="card-img-top pt-3"
+                        src="./assets/img/plebiscito/{{resultado.mejoresCandidatos.0.Codigo_candidato}}.png"
                         style="height: 350px;" alt="Card image cap">
 
                     <div class="card-body">
-                        <h5 class="card-title">{{this.Nombre2}}{{this.Nombre1}}</h5>
                         <p class="card-text">
-                        <div class="row border">
-                            <div class="col-sm-3 col-md-4">
-                                Partido:
-                            </div>
-                            <div class="col-sm-9 h6">
-                                <strong>{{this.Partido}}</strong>
-                            </div>
-                        </div>
-                        <div class="row border">
-                            <div class="col-sm-3 col-md-4">
-                                Pacto:
-                            </div>
-                            <div class="col-sm-9 h6">
-                                <strong>{{this.Lista}}</strong>
-                            </div>
-                        </div>
                         <div class="row border">
                             <div class="col-sm-3 col-md-4">
                                 RRSS:
                             </div>
                             <div class="col-sm-9 h6">
-                                    <ul class="d-inline-flex">
-                                        <li class="nav-item">
-                                            <ul class="list-inline-mb-0">
-                                                {{#if this.Web}}
-                                                <li class="list-inline-item"><a href="{{this.Web}}" target="_blank"><img src="./assets/img/rrss/web.png" width="32" alt=""></a></li>
-                                                {{/if}}           
-                                                <li class="list-inline-item"><a href="{{this.GrandesAportes}}" target="_blank"><img src="./assets/img/rrss/twitter.png" width="32" alt=""></a></li>
-                                                <li class="list-inline-item"><a href="{{this.NAportantes}}" target="_blank"><img src="./assets/img/rrss/instagram.png" width="32" alt=""></a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                <ul class="d-inline-flex">
+                                    <li class="nav-item">
+                                        <ul class="list-inline-mb-0">
+                                            {{#if resultado.mejoresCandidatos.0.Web}}
+                                            <li class="list-inline-item"><a href="{{resultado.mejoresCandidatos.0.Web}}" target="_blank"><img
+                                                        src="./assets/img/rrss/web.png" width="32" alt=""></a></li>
+                                            {{/if}}
+                                            <li class="list-inline-item"><a
+                                                    href="{{resultado.mejoresCandidatos.0.GrandesAportes}}"
+                                                    target="_blank"><img src="./assets/img/rrss/twitter.png" width="32"
+                                                        alt=""></a></li>
+                                            <li class="list-inline-item"><a
+                                                    href="{{resultado.mejoresCandidatos.0.NAportantes}}"
+                                                    target="_blank"><img src="./assets/img/rrss/instagram.png"
+                                                        width="32" alt=""></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </div>
-                        </div> 
+                        </div>
+                        <p></p>
+                        <br>
                         <div class="row border">
-                            <div class="col-sm-6 col-md-6">
-                                Antecedentes:
+                            <div class="col-sm-12 col-md-12" style="background-color: #{{changeColor resultado.mejoresCandidatos.1.Porcentaje_Cercania}}; color: #fff ;
+                                    font-size: 24px; text-align: center;">
+                                {{resultado.mejoresCandidatos.1.Porcentaje_Cercania}}%
                             </div>
-                            <div class="col-sm-9 h6">
-                                    <ul class="d-inline-flex">
-                                        <li class="nav-item">
-                                            <ul class="list-inline-mb-0">
-                                                <li class="list-inline-item"><a href="./assets/img/plebiscito/antecedentes.png" target="_blank"><img src="./assets/img/rrss/cv.png" alt=""></a></li>
-                                             </ul>
-                                        </li>
-                                    </ul>
-                            </div>
-                        </div> 
-                        
+                        </div>
                         <div class="row border">
-                            
-                            
-                            <div class="col-sm-12 col-md-12" style="background-color: #{{changeColor this.Porcentaje_Cercania}}; color: #fff ;
-                                    font-size: 34px; text-align: center;">
-                                {{this.Porcentaje_Cercania}}%
+                            <div class="col-sm-12 h6">
+                                <center><strong
+                                        style="font-size: 24px;">{{resultado.mejoresCandidatos.1.Nombre1}}</strong>
+                                </center>
                             </div>
                         </div>
 
@@ -89,19 +82,28 @@
                 </div>
             </div>
             <br>
-            {{/each}}
         </div>
         <div class="col-sm-6 col-md-6 h4">
             <h1>Sigue informandote!</h1>
             <br>
             <ul>
-                <li><a href="./assets/files/nc.pdf" target="_blank">Borrador nueva constitución!</a></li>
+                <li> (Y no te dejes llevar por mentiras)</li>
                 <br>
                 <li>Busca tu mesa y si eres vocal en:</li>
                 <li><a href="https://consulta.servel.cl/" target="_blank">https://consulta.servel.cl/</a></li>
                 <br>
-                <li><a href="./assets/files/financiamiento.pdf" target="_blank">Quienes los financian?</a></li>
+                <li>- <a href="./assets/files/GuíaprácticadelborradorNuevaConstitución.pdf" target="_blank">Guía practica Constitución 2022</a></li>
+                <li>- <a href="./assets/img/plebiscito/legitimidad.jpeg" target="_blank">Legitimidad</a></li>
+                <li>- <a href="./assets/files/nc.pdf" target="_blank">Constitución 2022</a></li>
+                <li>- <a href="./assets/files/Constitucion1980.pdf" target="_blank">Constitución 1980</a></li>
+                <li>- Financiamiento</li>
+                <li>- Partidos y organizaciones</li>
                 <br>
+                <li><b>Otras Fuentes de interés:</b></li>
+                <li>- <a href="https://plataformacontexto.cl/contexto_factual/" target="_blank">Contexto Factual</a></li>
+                <li>- <a href="https://www.chileconvencion.cl/" target="_blank">La convención</a></li>
+                <li>- <a href="https://laneta.cl/" target="_blank"> Laneta</a></li>
+                <br><br>
                 <li>
                     <a href="/"><button type="button" class="btn btn-lg btn-success">Volver a participar</button></a>
                 </li>
