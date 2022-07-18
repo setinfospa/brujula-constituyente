@@ -3,10 +3,8 @@
         <div class="col-sm-6 col-md-6">
             <div class="row">
                 <div class="col-12">
-                    <h4><a href="https://brujulaconstituyente.cl">brujulaconstituyente.cl</a> </h4>
-                    <br>
+                    <h5><a href="https://brujulaconstituyente.cl">brujulaconstituyente.cl</a> </h5>
                     <h3><span class="text-danger">{{#if resultado.name}}{{resultado.name}}{{/if}}</h3>
-                    <br>
                     <h3 class="text-uppercase">Tus resultados son:</h3>
                 </div>
             </div>
@@ -16,7 +14,6 @@
                 {{resultado.coherencia}}
             </div>
             {{/if}} --}}
-            <br>
             <div class="row border" style="width: 18rem;">
                 <div class="col-sm-12 col-md-12" style="background-color: #{{changeColor resultado.mejoresCandidatos.0.Porcentaje_Cercania}}; color: #fff ;
                                     font-size: 34px; text-align: center;">
@@ -25,7 +22,7 @@
             </div>
             <div class="row border" style="width: 18rem;">
                 <div class="col-sm-12 h6">
-                    <center><strong style="font-size: 40px;"> <img src="http://localhost:3000/assets/img/GenderTestagree2.png">{{resultado.mejoresCandidatos.0.Nombre1}}</strong></center>
+                    <center><strong style="font-size: 40px;">{{resultado.mejoresCandidatos.0.Nombre1}}</strong></center>
                 </div>
             </div>
             <div class="row">

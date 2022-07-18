@@ -13,6 +13,9 @@ var Arr_Resultado;
 var FechaImpresa= new Date;
 let name;
 
+let pendiente = -2.81;
+let cruce = 117.8;
+
 var cColR; //contador columna respuesta
 var Distr; //distrito del encuestado
 var MaxPreg; // numero de preguntas validas
@@ -43,10 +46,12 @@ function ProcesaRespuestas(Respuestas) {
 	return new Promise(function (resolve, reject) {
 		//leeArchivo(Respuestas).then( Arr_Lineas=> {
 		console.log("Respuestas.length "+Respuestas.length);
-		for (let index = 0; index < 6; index++) {
+		for (let index = 0; index < 8; index++) {
 			let string = '3';
 			Respuestas.splice(16, 0, string);
 		}
+
+		console.log(Respuestas);
 
 		var lengPreguntas=Arr_Preguntas.length-1
 		var lengRespuestas=Respuestas.length
@@ -56,6 +61,12 @@ function ProcesaRespuestas(Respuestas) {
 			Arr_Resultado = new Array();
 			Arr_Respuestas = new Array();
 			Arr_Respuestas=Respuestas.slice(0,lengPreguntas) //limita respuestas recibidas a el largo de las preguntas
+			Arr_Respuestas.push('3');
+			Arr_Respuestas.push('3');
+			Arr_Respuestas.push('3');
+			Arr_Respuestas.push('3');
+			Arr_Respuestas.push('3');
+			Arr_Respuestas.push('3');
 			Arr_Respuestas.push('3');
 			Arr_Respuestas.push('3');
 			//Arr_Respuestas[Arr_Respuestas.length - 2] = 1;
@@ -355,7 +366,7 @@ function RecomiendaCandidato() {
 												'"Partido":'			+'"' + Arr_Resultado[cFilC][5]+ '",'+
 												'"Web":'				+'"' + Arr_Resultado[cFilC][6]+ '",'+
 												'"Codigo_candidato":'	+'"' + Arr_Resultado[cFilC][7]+ '",'+
-												'"Porcentaje_Cercania":'+'"' + Arr_Resultado[cFilC][10]+ '"'+
+												'"Porcentaje_Cercania":'+'"' + parseInt(Arr_Resultado[cFilC][10])+ '"'+
 												'},'
 					}
 					AuxSalida=AuxSalida.substring(0,AuxSalida.length -1);
@@ -420,7 +431,7 @@ function GetResultado() {
 }
 exports.GetResultado = GetResultado;
 function PorcentajeCercania(DistL, DistC) {
-	return (-3.6 * (DistL + DistC) + 100).toFixed(1) ;
+	return (pendiente * (DistL + DistC) + cruce).toFixed(1) ;
 }
 exports.PorcentajeCercania = PorcentajeCercania;
 function EncDecData(szData){

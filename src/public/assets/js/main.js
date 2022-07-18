@@ -1,4 +1,4 @@
-regions.addEventListener('change', (e) => {
+/* regions.addEventListener('change', (e) => {
 	comunes.options.length = 0;
 	regiones.forEach((region) => {
 		if (region.NombreRegion == e.target.value) {
@@ -24,7 +24,7 @@ window.addEventListener('load', function (event) {
 		option.value = region.NombreRegion;
 		regions.appendChild(option); //Metemos la opcion en el select
 	});
-});
+}); */
 
 var regiones = [
 	{

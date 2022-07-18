@@ -1,38 +1,30 @@
-﻿Last;_1;_2;_3;_4;_5;_6;_7;_8;_9;_10;_11;_12;_13;_14;ProgressBar;Code;Tema;Pregunta;PLista;PCandi
-;true;;;;;;;;;;;;;;2;1;Comparativa 1980 vs 2022;El estado de Chile:
-;;true;;;;;;;;;;;;;5;2;Comparativa 1980 vs 2022;En educación:
-;;;true;;;;;;;;;;;;7;3;Comparativa 1980 vs 2022;Derecho a la propiedad:
+﻿Last;_1;_2;_3;_4;_5;_6;_7;_8;_9;_10;_11;_12;_13;_14;ProgressBar;Code;Tema;Pregunta;PLista;PCandi;_99
+;true;;;;;;;;;;;;;;2;1;Comparativa 1980 vs 2022;Chile es un estado...
+;;true;;;;;;;;;;;;;5;2;Comparativa 1980 vs 2022;Educación:
+;;;true;;;;;;;;;;;;7;3;Comparativa 1980 vs 2022;Propiedad:
 ;;;;true;;;;;;;;;;;8;4;Comparativa 1980 vs 2022;Salud:
 ;;;;;true;;;;;;;;;;10;5;Comparativa 1980 vs 2022;Trabajo:
-;;;;;;true;;;;;;;;;13;6;Comparativa 1980 vs 2022;Derechos Ambientales:
+;;;;;;true;;;;;;;;;13;6;Comparativa 1980 vs 2022;Medio Ambiente:
 ;;;;;;;true;;;;;;;;17;7;Comparativa 1980 vs 2022;Agua:
-;;;;;;;;true;;;;;;;22;8;Comparativa 1980 vs 2022;Plurinacionalidad:
-;;;;;;;;;true;;;;;;24;9;Comparativa 1980 vs 2022;Respecto a pensiones:
+;;;;;;;;true;;;;;;;22;8;Comparativa 1980 vs 2022;Chile es un estado:
+;;;;;;;;;true;;;;;;24;9;Comparativa 1980 vs 2022;Pensiones:
 ;;;;;;;;;;true;;;;;31;10;Comparativa 1980 vs 2022;Poder Legislativo:
-;;;;;;;;;;;true;;;;34;11;Comparativa 1980 vs 2022;Participación Democrática:
-;;;;;;;;;;;;true;;;36;12;Comparativa 1980 vs 2022;Principio de Probidad
-;;;;;;;;;;;;;true;;39;13;Comparativa 1980 vs 2022;Derecho a la vida:
-;;;;;;;;;;;;;;true;42;14;Comparativa 1980 vs 2022;Medios de comunicación:
-;;;;;;;;;;;;;;;44;15;Lo nuevo de 2022;Responsabilidad Fiscal y sostenibilidad: El actuar del estado y sus finanzas se guiaran por los principios de Responsabilidad Fiscal y sostenibilidad.
-;;;;;;;;;;;;;;;50;16;Lo nuevo de 2022;Pueblos originarios: Dar reconocimiento, valorar y promover la participación de los pueblos originarios.
-;;;;;;;;;;;;;;;55;17;Lo nuevo de 2022;Cultura, artes y conocimientos: El Estado promueve, fomenta y garantiza el acceso, desarrollo y difusión de las culturas, las artes y los conocimientos, atendiendo a la diversidad cultural en todas sus manifestaciones.
-;;;;;;;;;;;;;;;60;18;Lo nuevo de 2022;Inhabilidad para cargos publicos: No podrán optar a cargos públicos ni de elección popular las personas condenadas por crímenes de lesa humanidad, delitos sexuales y de violencia intrafamiliar, aquellos vinculados a corrupción como fraude al fisco, lavado de activos, soborno, cohecho, malversación de caudales públicos y los demás que así establezca la ley.
-;;;;;;;;;;;;;;;62;19;Lo nuevo de 2022;Crisis climática y ecológica: Es deber del Estado normar y fomentar la gestión, reducción y valorización de residuos, en la forma que determine la ley.
-;;;;;;;;;;;;;;;64;20;Lo nuevo de 2022;Reciclaje: Es deber del Estado normar y fomentar la gestión, reducción y valorización de residuos, en la forma que determine la ley.
-;;;;;;;;;;;;;;;66;21;Lo nuevo de 2022;Cooperativas: El Estado reconoce la función social, económica y productiva de las cooperativas, conforme al principio de ayuda mutua, y fomentará su desarrollo. 
-;;;;;;;;;;;;;;;68;22;Lo nuevo de 2022;Biodiversidad: El Estado protege la biodiversidad, debiendo preservar, conservar y restaurar el hábitat de las especies nativas silvestres, en tal cantidad y distribución que sostenga adecuadamente la viabilidad de sus poblaciones y asegure las condiciones para su supervivencia y no extinción." Es deber del Estado proteger los espacios y ecosistemas marinos y marino-costeros.
-;;;;;;;;;;;;;;;70;23;Lo nuevo de 2022;Paridad:	Chile se constituye como una República cuya democracia es paritaria. implica una participación equilibrada de hombres y mujeres en los distintos espacios de toma de decisiones.
-;;;;;;;;;;;;;;;72;24;Lo nuevo de 2022;Abusos del mercado: El Estado deberá prevenir y sancionar los abusos en los mercados. Son contrarias al interés social las prácticas de colusión, abusos de posición monopólica, así como las concentraciones empresariales que afecten el funcionamiento eficiente, justo y leal de los mercados, es deber del Estado prevenir y sancionar los abusos.
-;;;;;;;;;;;;;;;74;25;Lo nuevo de 2022;Erradicar la corrupcion:	"La corrupción es contraria al bien común y atenta contra el sistema democrático. Es deber del Estado erradicar la corrupción en todas sus formas, tanto en el sector público como en el privado, deberá adoptar medidas eficaces para su estudio, prevención, investigación, persecución y sanción.
-;;;;;;;;;;;;;;;76;26;Lo nuevo de 2022;Las personas con discapacidad: "Tienen derecho al goce y ejercicio de su capacidad jurídica, a la accesibilidad universal, a la inclusión social, inserción laboral, participación política, económica, social y cultural. La ley determinará los medios necesarios para identificar y remover las barreras físicas, sociales, culturales, etc. para el ejercicio de sus derechos."
-;;;;;;;;;;;;;;;78;27;Lo nuevo de 2022;Derechos de los consumidores: El Estado protegerá los derechos a la libre elección, a la información veraz, a la no discriminación, a la seguridad, a la protección de la salud y el medio ambiente, a la reparación e indemnización adecuada y a la educación para el consumo responsable.
-;;;;;;;;;;;;;;;70;28;Lo nuevo de 2022;Derecho a la vivienda: "Derecho a la vivienda: derecho a una vivienda digna, adecuada, habitable, con espacio y equipamiento suficiente. Disponibilidad de servicios, accesibilidad y ubicación apropiada."
-;;;;;;;;;;;;;;;72;29;Lo nuevo de 2022;Participacion de los trabajadores: La opinión de los trabajadores debe ser considerada en las decisiones de las empresas.	
-;;;;;;;;;;;;;;;76;30;Lo nuevo de 2022;Solidaridad interterritorial: "El Estado y las entidades territoriales —regiones, comunas, etc— deben contribuir a la corrección de las desigualdades que existan entre ellas. La ley deberá definir fondos para compensar a las entidades territoriales con menor recaudación."
-;;;;;;;;;;;;;;;80;31;Lo nuevo de 2022;Agricultura campesina e indígena: El Estado reconoce y apoya la agricultura campesina e indígena, la recolección y la pesca artesanal, como actividades fundamentales de la producción de alimentos.
-;;;;;;;;;;;;;;;84;32;Lo nuevo de 2022;Derecho a la muerte digna: "Las personas tendran derecho a tomar decisiones libres e informadas sobre sus cuidados y tratamientos al final de su vida. El Estado deberá garantizar los cuidados paliativos. La ley regulará las condiciones para garantizar el ejercicio de este derecho, incluyendo  información y acompañamiento adecuado."
-;;;;;;;;;;;;;;;88;33;Lo nuevo de 2022;Ciencia y Tecnología: "Se incorpora el deber del Estado de incluir los mejores avances de las ciencias, tecnología, conocimientos e innovación al quehacer público. El derecho, a la información, al conocimiento, a la educación y conectividad digital, a la participación digital y a la protección de los datos personales. Principios de bioética."
-;;;;;;;;;;;;;;;92;34;Lo nuevo de 2022;Fuerzas armadas: "Las Fuerzas Armadas (Ejército, la Armada y la Fuerza Aérea.) Son instituciones profesionales, jerarquizadas, disciplinadas, obedientes y no deliberantes, están sujetos a controles en materia de probidad y transparencia. El ingreso será gratuito y no discriminatorio. La educación militar se funda en el respeto a los derechos humanos."
-;;;;;;;;;;;;;;;94;35;Lo nuevo de 2022;Información Publica:	"Garantiza el derecho a buscar, solicitar, recibir y difundir información publica de cualquier órgano del Estado o servicio de utilidad publica."
-;;;;;;;;;;;;;;;98;36;Lo nuevo de 2022;Derechos sexuales y reproductivos: Se garantizan los derechos sexuales y reproductivos, estos comprenden, entre otros, el derecho a decidir de forma libre, autónoma e informada sobre el propio cuerpo, sobre el ejercicio de la sexualidad, la reproducción, el placer y la anticoncepción.
-true;;;;;;;;;;;;;;;100;37;Lo nuevo de 2022;Estado plurilingüe: "Chile es un Estado plurilingüe. Se deberá revitalizar y valorar las lenguas de las pueblos indígenas. También se reconoce y valoriza la lengua de señas chilena."
+;;;;;;;;;;;true;;;;34;11;Comparativa 1980 vs 2022;Democracia:
+;;;;;;;;;;;;true;;;36;12;Comparativa 1980 vs 2022;Medios de comunicación:
+;;;;;;;;;;;;;;;44;13;Novedades 2022;Derecho a la vivienda: adecuada, habitable, con espacio y equipamiento, disponibilidad de servicios, accesibilidad y ubicación apropiada.
+;;;;;;;;;;;;;;;50;14;Novedades 2022;Paridad: Participación equilibrada de hombres y mujeres en los distintos espacios de toma de decisiones.
+;;;;;;;;;;;;;;;55;15;Novedades 2022;Dar reconocimiento, valorar y promover la participación de los Pueblos Originarios.
+;;;;;;;;;;;;;;;60;16;Novedades 2022;El Estado debe erradicar la corrupción tanto en el sector público como privado, adoptar medidas para su prevención, persecución y sanción.
+;;;;;;;;;;;;;;;62;17;Novedades 2022;Solidaridad interterritorial: Compensar fondos a nivel regional y comunal para corregir las desigualdades entre territorios.
+;;;;;;;;;;;;;;;64;18;Novedades 2022;El actuar del estado y sus finanzas se guiarán por los principios de Responsabilidad Fiscal y sostenibilidad. Se establece la progresividad en el financiamiento de derechos.
+;;;;;;;;;;;;;;;66;19;Novedades 2022;Incluir el derecho a la muerte digna, con accesos a cuidados paliativos, acompañamiento adecuado e información para decidir libre e informado (permite la eutanasia).	
+;;;;;;;;;;;;;;;68;20;Novedades 2022;Garantizar los derechos sexuales y reproductivos, como, el derecho a decidir de forma libre sobre el propio cuerpo, sobre el ejercicio de la sexualidad, la reproducción, el placer y la anticoncepción. (permite el aborto)
+;;;;;;;;;;;;;;;70;21;Novedades 2022;Inhabilidad para cargos públicos. No podrán optar a cargos públicos las personas condenadas por crímenes de lesa humanidad, delitos sexuales y de violencia intrafamiliar, vinculados a corrupción, fraude al fisco, lavado de activos, soborno, malversación de caudales públicos y los demás que así establezca la ley. 
+;;;;;;;;;;;;;;;72;22;Novedades 2022;El Estado deberá prevenir y sancionar los abusos en los mercados (ej. colusión, monopolio, concentraciones) que afecten el funcionamiento eficiente, justo y leal de los mercados.
+;;;;;;;;;;;;;;;74;23;Novedades 2022;El Estado debe proteger la biodiversidad, debiendo preservar, conservar y restaurar el hábitat de las especies nativas silvestres para asegurar su supervivencia, incluyendo los ecosistemas marinos.
+;;;;;;;;;;;;;;;79;24;Novedades 2022;Incluir en la constitución los derechos de las personas con discapacidad y disponer los medios para remover las barreras a su desarrollo. 
+;;;;;;;;;;;;;;;83;25;Novedades 2022;Cultura, artes y conocimientos. El Estado promueve, fomenta y garantiza el acceso, desarrollo y difusión de las culturas, las artes y los conocimientos.
+;;;;;;;;;;;;;;;86;26;Novedades 2022;Derechos de los consumidores. Proteger los derechos a la libre elección, la información veraz, no discriminación, seguridad, protección de la salud y el medio ambiente, la reparación e indemnización adecuada y a la educación para el consumo responsable.
+;;;;;;;;;;;;;;;90;27;Novedades 2022;Las Fuerzas Armadas (Ejército, Armada y la Fuerza Aérea.) Son instituciones profesionales, jerarquizadas, disciplinadas, obedientes y no deliberantes, sujetos a controles en materia de probidad y transparencia. El ingreso será gratuito y no discriminatorio. 
+;;;;;;;;;;;;;;;94;28;Novedades 2022;Reconocer a la agricultura campesina, indígena y la pesca artesanal, como actividades fundamentales de la producción de alimentos.
+true;;;;;;;;;;;;;;;100;29;Novedades 2022;Ciencia y Tecnología. Es deber del Estado incluir los mejores avances de las ciencias, tecnología, conocimientos e innovación al quehacer público. El derecho, a la información, al conocimiento, a la educación y conectividad digital, a la participación digital y a la protección de los datos personales. Principios de bioética.
