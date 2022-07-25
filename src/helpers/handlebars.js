@@ -13,7 +13,7 @@ function getJSONFromString(json) {
 }
 
 function changeColor(arg1) {
-    if(arg1 > 0 && arg1 < 20){
+    if(arg1 >= 0 && arg1 < 20){
 		return 'ff5733'
 	} else if(arg1 > 20 && arg1 < 30){
 		return 'ff7433'

@@ -13,8 +13,8 @@ var Arr_Resultado;
 var FechaImpresa= new Date;
 let name;
 
-let pendiente = -2.81;
-let cruce = 117.8;
+let pendiente = -2.90;
+let cruce = 119;
 
 var cColR; //contador columna respuesta
 var Distr; //distrito del encuestado

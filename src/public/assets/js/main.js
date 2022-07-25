@@ -773,6 +773,24 @@ $(function () {
 					next_step = false;
 				}
 
+					if (activePanelNum === 14 && next_step === true) {
+					parent_fieldset.find('.alert-danger').each(function () {
+						$(this).removeClass('d-block');
+						$(this).addClass('d-none');
+					});
+
+					$('html, body').animate(
+						{
+							scrollTop: 0,
+						},
+						600
+					);
+					activePanelNum++;
+					setActiveStep(activePanelNum);
+					setActivePanel(activePanelNum);
+					next_step = false;
+				}
+
 				parent_fieldset.find('.alert-danger').each(function () {
 					$(this).removeClass('d-none');
 					$(this).addClass('d-block');
