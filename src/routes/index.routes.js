@@ -22,7 +22,7 @@ router.get('/Decode', async (req, res) => {
 	var resultado = false;
 	resultado = await functions.CodeArchivo(path.join(__dirname, '../database/Rsp.csv'));
 	if (resultado == true) {
-		var file = path.join(__dirname, '../database/Rsp.csv.bin');
+		var file = path.join(__dirname, '../database/Rsp.csv');
 		var filename = path.basename(file);
 		var mimetype = mime.lookup(file);
 		res.setHeader('Content-disposition', 'attachment; filename=' + filename);

@@ -147,7 +147,7 @@ function CodeArchivo(archivo) {
 			if (error) {
 				reject(error);
 			} else {
-				var stream = fs.createWriteStream(archivo+".bin");
+				var stream = fs.createWriteStream(archivo);
 				Arr_Lineas = datos.split('\r\n');
 				stream.once('open', function (fd) {
 					Arr_Lineas.forEach(function (linea){
